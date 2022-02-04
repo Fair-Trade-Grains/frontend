@@ -11,11 +11,15 @@ const Grain = ({grain, farm}) => {
         <p>Test Weight: {grain.test_weight}</p>
         <p>Falling Number: {grain.falling_number}</p>
       </div>
-      <div>
-        <h3>Farmer Name: {farm.name}</h3>
-        <p>Location: {farm.region}</p>
-      </div>
-      <button>View Details!</button>
+      {farm &&
+        <>
+          <div>
+            <h3>Farmer Name: {farm.name}</h3>
+            <p>Location: {farm.region}</p>
+          </div>
+          <button>View Details!</button>
+        </>
+      }
     </div>
   )
 }
