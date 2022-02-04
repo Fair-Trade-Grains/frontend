@@ -1,5 +1,6 @@
 import logo from '../assets/logo.svg';
 import '../css/App.css';
+import GrainResults from './GrainResults';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         Or perhaps you have some grains to peddle
       </div>
       </header>
-
+      <GrainResults />
     </div>
   );
 }
