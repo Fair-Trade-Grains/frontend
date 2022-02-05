@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../css/NewGrainForm.css';
 
 class NewGrainForm extends Component {

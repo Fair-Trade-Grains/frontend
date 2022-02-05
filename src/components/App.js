@@ -5,6 +5,7 @@ import GrainResults from './GrainResults';
 import FarmerResults from './FarmerResults';
 import NewProfileForm from './NewProfileForm';
 import FarmerProfile from './FarmerProfile';
+import NewGrainForm from './NewGrainForm';
 import Landing from './Landing';
 
 function App() {
@@ -18,7 +19,9 @@ function App() {
           <Route path='/' element={<Landing />}/>
           <Route path="/grains" element={<GrainResults />} />
           <Route path='/create-farmer' element={<NewProfileForm />} />
-          <Route fath='/farms' element={<FarmerResults />} />
+          <Route path='/farms' element={<FarmerResults />} />
+          <Route path='/farms/:farmID' element={<FarmerProfile />} />
+          <Route path='/new-grain/:farmID' element={<NewGrainForm />} />
         </Routes>
       </main>
     </div>
