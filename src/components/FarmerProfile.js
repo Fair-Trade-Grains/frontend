@@ -19,17 +19,17 @@ const FarmerProfile = () => {
     })
 
   return (
-    <>
-      {!farm ? <p>{`404: Sorry, no farm with and id of '${farmID}' exists.`}</p> :
+    <div className="farm-profile-container">
+      {!farm ? <p className="profile-error">{`404: Sorry, no farm with and id of '${farmID}' exists.`}</p> :
         <section>
           <div className="farmer-view-header">
-            <h2>{farm.name}</h2>
-            <p>{farm.region}</p>
+            <h2 className="farm-name">{farm.name}</h2>
+            <p className='farm-region'>Region: {farm.region}</p>
           </div>
           <div className="farmer-view-body">
             <div className="farmer-info-container">
               <img src={wheatField} alt="wheat field ready for harvest under a cloudy blue sky" />
-              <article>
+              <article className="farmer-info">
                 <p>{farm.bio}</p>
                 <p>{farm.email}</p>
                 <p>{farm.business_phone}</p>
@@ -42,7 +42,7 @@ const FarmerProfile = () => {
           </div>
         </section>
       }
-    </>
+    </div>
   )
 }
 
