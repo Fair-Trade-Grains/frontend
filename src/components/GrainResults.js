@@ -7,7 +7,7 @@ import data from '../mockData'
 const GrainResults = () => {
 
   // need to fetch all grains from server and setState with setGrains
-  // need to fetch all farms with just .name & .region
+  // need to fetch all farms with just .id, .name & .region
 
   const [grains, setGrains] = useState([])
   const [farms, setFarms] = useState([])
@@ -24,7 +24,7 @@ const GrainResults = () => {
   const filteredCards = filtered.map(grain => {
     let farm = farms.find(farm => grain.farm_id === farm.id)
     return (
-      <Grain key={grain.id} grain={grain} farm={farm} />
+      <Grain key={grain.id} grain={grain} farm={farm}/>
     )
   })
 
