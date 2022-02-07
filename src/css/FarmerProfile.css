@@ -64,8 +64,8 @@ img {
 }
 
 .farmer-grain-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
   justify-content: center;
 
