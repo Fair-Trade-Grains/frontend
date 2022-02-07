@@ -29,4 +29,7 @@ span {
 main {
   height: 80vh;
   width: 100%;
+  background-image: url('../assets/wheatField.png');
+  background-position: center;
+  background-size: cover;
 }
