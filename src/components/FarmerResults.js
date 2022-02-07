@@ -17,7 +17,7 @@ const FarmerResults = () => {
       <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
-        <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View this Farm</button>
+        <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Profile / Update Grains</button>
       </div>
       )
     })
@@ -27,7 +27,7 @@ const FarmerResults = () => {
         <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
-        <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View this Farm</button>
+        <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Profile / Update Grains</button>
       </div>
     )
   })

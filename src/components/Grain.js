@@ -42,6 +42,7 @@ const Grain = ({ grain, farm, stub }) => {
         <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Details!</button>
         </>
       }
+      {window.location.href.includes('new-grain') && <button>Delete Grain</button>}
     </div>
   )
 }
