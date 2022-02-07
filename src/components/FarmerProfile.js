@@ -40,6 +40,7 @@ const FarmerProfile = () => {
               </article>
             </div>
             <div className="farmer-grain-container">
+              <h2 className='farm-name'>Our grains</h2>
               {grainCards ? grainCards : <p>Loading . . .</p>}
             </div>
           </div>

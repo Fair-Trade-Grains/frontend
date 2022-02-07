@@ -68,6 +68,10 @@ img {
   width: 90%;
 }
 
+.farmer-info {
+  font-size: 24px;
+}
+
 .farmer-grain-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -78,7 +82,7 @@ img {
 }
 
 .invitation {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-family: 'Londrina Solid', sans-serif;
   padding-bottom: 5px;
 }
