@@ -1,5 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom';
-import logo from '../assets/logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import '../css/App.css';
 import GrainResults from './GrainResults';
 import FarmerResults from './FarmerResults';
