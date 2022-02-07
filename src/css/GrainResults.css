@@ -1,0 +1,18 @@
+.grains-browse-view {
+  display: flex;
+  flex-direction: column;
+
+  height: 80vh;
+  width: 100%
+}
+
+.grains-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  padding-bottom: 15px;
+}
