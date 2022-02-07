@@ -6,7 +6,7 @@ import statsIcon from '../assets/stats.svg'
 import barnIcon from '../assets/barn.svg'
 
 
-const Grain = ({ grain, farm }) => {
+const Grain = ({ grain, farm, stub }) => {
 
   const navigate = useNavigate()
 
@@ -16,7 +16,7 @@ const Grain = ({ grain, farm }) => {
   }
 
   return (
-    <div className="grain-result">
+    <div className={`grain-result ${stub}`}>
       <div className='grain-name'>
         <img className='wheat-icon' src={wheatIcon} />
         <h2>{grain.name}</h2>
