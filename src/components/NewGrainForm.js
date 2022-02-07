@@ -37,9 +37,10 @@ class NewGrainForm extends Component {
 
 render(){
   return(
-    <div className='new-grain-form'>
-      <form>
+    <div className='new-grain-container'>
+      <form className='new-grain-form'>
         <input
+            className='new-grain-input'
             type='text'
             placeholder='Grain name'
             name='name'
@@ -47,6 +48,7 @@ render(){
             onChange={event => this.handleChange(event)}
           />
         <input
+            className='new-grain-input'
             type='text'
             placeholder='Protein'
             name='protein'
@@ -54,6 +56,7 @@ render(){
             onChange={event => this.handleChange(event)}
           />
         <input
+            className='new-grain-input'
             type='text'
             placeholder='Test Weight'
             name='test_weight'
@@ -61,6 +64,7 @@ render(){
             onChange={event => this.handleChange(event)}
           />
         <input
+            className='new-grain-input'
             type='text'
             placeholder='Moisture'
             name='moisture'
@@ -68,6 +72,7 @@ render(){
             onChange={event => this.handleChange(event)}
           />
         <input
+            className='new-grain-input'
             type='text'
             placeholder='Falling number'
             name='falling_number'
@@ -75,13 +80,14 @@ render(){
             onChange={event => this.handleChange(event)}
           />
         <input
+            className='new-grain-input'
             type='text'
             placeholder='Description or other notes'
             name='notes'
             value={this.state.notes}
             onChange={event => this.handleChange(event)}
           />
-        <button onClick={event => this.submitProfile(event)}>Submit</button>
+        <button onClick={event => this.submitProfile(event)} className='update-farmer-nav-btn'>Submit</button>
         </form>
       </div>
     )
