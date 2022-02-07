@@ -11,18 +11,20 @@ const FarmerResults = () => {
 
   const farmCards = farms.map(farm => {
     return (
-      <div key={farm.id}>
+      <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
+        <button>View this Farm</button>
       </div>
       )
   })
 
   const filteredCards = filtered.map(farm => {
     return (
-      <div key={farm.id}>
+      <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
+        <button>View this Farm</button>
       </div>
     )
   })
