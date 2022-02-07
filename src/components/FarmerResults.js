@@ -11,7 +11,7 @@ const FarmerResults = () => {
 
   const farmCards = farms.map(farm => {
     return (
-      <div>
+      <div key={farm.id}>
         <p>{farm.name}</p>
         <p>{farm.region}</p>
       </div>
@@ -20,7 +20,7 @@ const FarmerResults = () => {
 
   const filteredCards = filtered.map(farm => {
     return (
-      <div>
+      <div key={farm.id}>
         <p>{farm.name}</p>
         <p>{farm.region}</p>
       </div>
