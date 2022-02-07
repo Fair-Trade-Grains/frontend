@@ -14,7 +14,7 @@ const FarmerResults = () => {
       <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
-        <button>View this Farm</button>
+        <button className='view-farm-btn'>View this Farm</button>
       </div>
       )
   })
@@ -24,7 +24,7 @@ const FarmerResults = () => {
       <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
-        <button>View this Farm</button>
+        <button className='view-farm-btn'>View this Farm</button>
       </div>
     )
   })

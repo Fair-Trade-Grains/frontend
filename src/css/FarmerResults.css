@@ -20,8 +20,30 @@
 .farm-result {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
 
   border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
   width: 50%;
   padding: 3%;
+}
+
+.view-farm-btn {
+  background-color: #6f4404;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  color: #da9100;
+  border: 1px solid #da9100;
+  border-radius: 150px;;
+  padding: 3px 10px;
+}
+
+.view-farm-btn:hover {
+  background-color: #da9100;
+  color: #6f4404;
+  transform: scale(1.05);
+  cursor: pointer;
 }

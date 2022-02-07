@@ -39,7 +39,7 @@ const Grain = ({ grain, farm, stub }) => {
               <p>{farm.region}</p>
             </div>
           </div>
-        <button id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Details!</button>
+        <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Details!</button>
         </>
       }
     </div>
