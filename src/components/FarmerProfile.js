@@ -8,13 +8,13 @@ import wheatField from '../assets/wheatField.png'
 const FarmerProfile = () => {
 
   const { farmID } = useParams()
-  
+
   const farm = data.farms.find(farm => farm.id === Number(farmID))
- 
+
   const grainCards = data.grains.filter(grain => grain.farm_id === Number(farmID))
     .map(grain => {
       return (
-        <Grain key={grain.id} grain={grain}/>
+        <Grain key={grain.id} grain={grain} stub={'grain-card-stub'}/>
       )
     })
 
