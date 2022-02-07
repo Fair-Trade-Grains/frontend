@@ -1,7 +1,17 @@
 import React from 'react';
 import '../css/Grain.css';
+import { useNavigate } from 'react-router'
 
-const Grain = ({grain, farm}) => {
+
+const Grain = ({ grain, farm }) => {
+  
+  const navigate = useNavigate()
+
+  const navigateToProfile = (event) => {
+    event.preventDefault()
+    navigate(`/farms/${event.target.id}`)
+  }
+
   return (
     <div className="grain-result">
       <h2>{grain.name}</h2>
@@ -17,7 +27,7 @@ const Grain = ({grain, farm}) => {
             <h3>Farmer Name: {farm.name}</h3>
             <p>Location: {farm.region}</p>
           </div>
-          <button>View Details!</button>
+        <button id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Details!</button>
         </>
       }
     </div>
