@@ -29,8 +29,11 @@ const FarmerProfile = () => {
           <div className="farmer-view-body">
             <div className="farmer-info-container">
               <img src={wheatField} alt="wheat field ready for harvest under a cloudy blue sky" />
-              <article className="farmer-info">
+              <article className='farmer-bio'>
                 <p>{farm.bio}</p>
+              </article>
+              <article className="farmer-info">
+                <p className='invitation'>Reach out to us at:</p>
                 <p>{farm.email}</p>
                 <p>{farm.business_phone}</p>
                 <p>{farm.address}</p>
