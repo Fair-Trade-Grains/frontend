@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import '../css/App.css';
 import GrainResults from './GrainResults';
 import FarmerResults from './FarmerResults';
@@ -12,7 +12,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Wheat<span>cute</span></h1>
+        <Link to='/'>
+          <h1>Wheat<span>cute</span></h1>
+        </Link>
       </header>
       <main>
         <Routes>
