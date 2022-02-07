@@ -1,12 +1,54 @@
+.wheat-icon,
+.stats-icon,
+.barn-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.stats-icon,
+.barn-icon {
+  margin-right: 10px;
+}
+
 .grain-result {
-  display: flex;
-  justify-content: space-evenly;
+  font-family: Raleway, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr .5fr;
+  justify-items: start;
   align-items: center;
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
   margin: 10px;
 
-  height: 15vh;
+  height: 12vh;
   width: 90%;
+}
+
+.grain-name {
+  font-family: Montserrat;
+  display: flex;
+  font-size: 1.2em;
+  white-space: nowrap;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.grain-stats {
+  display: flex;
+  white-space: nowrap;
+  text-align: right;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.farmer-stats {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.stat-number {
+  font-family: inherit;
+  font-size: inherit;
 }
