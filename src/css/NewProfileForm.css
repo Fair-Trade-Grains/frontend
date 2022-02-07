@@ -41,4 +41,5 @@
   background-color: #da9100;
   color: #6f4404;
   transform: scale(1.05);
+  cursor: pointer;
 }
