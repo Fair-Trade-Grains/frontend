@@ -81,7 +81,7 @@ render(){
             value={this.state.bio}
             onChange={event => this.handleChange(event)}
           />
-        <button onClick={event => this.submitProfile(event)}>Submit</button>
+        <button className='profile-submit-btn' onClick={event => this.submitProfile(event)}>Submit</button>
         </form>
       </div>
     )
