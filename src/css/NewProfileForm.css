@@ -1,0 +1,24 @@
+.new-profile-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80vh;
+  width: 100%;
+}
+
+.new-farm-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid black;
+
+  height: 94%;
+  width: 50%;
+  margin: 6%;
+}
+
+.new-farm-form-input {
+  width: 75%;
+}

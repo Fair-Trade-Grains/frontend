@@ -38,43 +38,43 @@ class NewProfileForm extends Component {
 render(){
   return(
     <div className='new-profile-form'>
-      <form>
-        <input
+      <form className="new-farm-form">
+        <input className="new-farm-form-input"
             type='text'
             placeholder='Your name or organization'
             name='name'
             value={this.state.name}
             onChange={event => this.handleChange(event)}
           />
-        <input
+        <input className="new-farm-form-input"
             type='text'
             placeholder='Address'
             name='address'
             value={this.state.address}
             onChange={event => this.handleChange(event)}
           />
-        <input
+        <input className="new-farm-form-input"
             type='text'
             placeholder='Email'
             name='email'
             value={this.state.email}
             onChange={event => this.handleChange(event)}
           />
-        <input
+        <input className="new-farm-form-input"
             type='text'
             placeholder='Phone number'
             name='phone'
             value={this.state.phone}
             onChange={event => this.handleChange(event)}
           />
-        <input
+        <input className="new-farm-form-input"
             type='text'
             placeholder='Ultimately this is gonna be where you upload a photo'
             name='photo'
             value={this.state.photo}
             onChange={event => this.handleChange(event)}
           />
-        <input
+        <input className="new-farm-form-input"
             type='text'
             placeholder='Tell us a little about your organization and your farming practices!'
             name='bio'
