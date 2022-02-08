@@ -46,8 +46,20 @@ class NewProfileForm extends Component {
 
   submitProfile = event => {
     event.preventDefault();
-    // here's where we're gonna write what happens when you submit a profile!
-    this.clearInputs();
+    if (this.state.name && this.state.email && this.state.region && this.state.bio) {
+      const newProfile = {
+        name: this.state.name,
+        email: this.state.email,
+        business_phone: this.state.business_phone,
+        address: this.state.address,
+        region: this.state.region,
+        bio: this.state.bio,
+        photo_path: this.state.photo_path
+      }
+      console.log(newProfile)
+      // here's where we're gonna write what happens when you submit a profile!
+      this.clearInputs();
+    }
   }
 
 render(){
@@ -55,7 +67,7 @@ render(){
     <div className='new-profile-form'>
       <button onClick={() => { this.handleOpendModal() }}>See map of the regions!</button>
       <form className="new-farm-form">
-        <label htmlFor='name'>Your name or your farm's name: </label>
+        <label htmlFor='name'>Your name or your farm's name: *required*</label>
         <input className="new-farm-form-input"
           type='text'
           id='name'
@@ -63,8 +75,9 @@ render(){
           name='name'
           value={this.state.name}
           onChange={event => this.handleChange(event)}
+          required
         />
-        <label htmlFor='email'>Your business email: </label>
+        <label htmlFor='email'>Your business email: *required*</label>
         <input className="new-farm-form-input"
           type='text'
           id='email'
@@ -72,6 +85,7 @@ render(){
           name='email'
           value={this.state.email}
           onChange={event => this.handleChange(event)}
+          required
         />
         <label htmlFor='business_phone'>Your business phone number: </label>
         <input className="new-farm-form-input"
@@ -91,12 +105,13 @@ render(){
           value={this.state.address}
           onChange={event => this.handleChange(event)}
         />
-        <label htmlFor='region'>Select your region (see the reference map above this form): </label>
+        <label htmlFor='region'>Select your region (see the reference map above this form): *required*</label>
         <select className="new-farm-form-input"
           id='region'
           name='region'
           value={this.state.region}
           onChange={event => this.handleChange(event)}
+          required
         >
           <option value=''>~~ Please choose an option ~~</option>
           <option value='Northeastern'>Northeastern</option>
@@ -112,16 +127,15 @@ render(){
           <option value='Northwest'>Northwest</option>
           <option value='Pacific'>Pacific</option>
         </select>
-        <label htmlFor='bio'>Personal and/or farm bio: </label>
+        <label htmlFor='bio'>Personal and/or farm bio: *required*</label>
         <textarea className="new-farm-form-input"
           id='bio'
           placeholder='Tell us a little about your organization and your farming practices! (1000 characters or less)'
           name='bio'
           rows='6'
-          spellcheck='true'
-          maxlength='1000'
           value={this.state.bio}
           onChange={event => this.handleChange(event)}
+          required
         ></textarea>
         <label htmlFor='photo_path'>Add a photo: </label>
         <input className="new-farm-form-input"
