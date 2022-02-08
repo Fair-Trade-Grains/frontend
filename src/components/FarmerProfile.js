@@ -1,12 +1,13 @@
 import React from 'react';
 import '../css/FarmerProfile.css';
-import { useParams } from 'react-router'
+import { useParams, useNavigate } from 'react-router'
 import Grain from './Grain'
 import data from '../mockData'
 import wheatField from '../assets/wheatField.png'
 
 const FarmerProfile = () => {
 
+  const navigate = useNavigate()
   const { farmID } = useParams()
 
   const farm = data.farms.find(farm => farm.id === Number(farmID))
@@ -20,6 +21,7 @@ const FarmerProfile = () => {
 
   return (
     <div className="farm-profile-container">
+      {window.location.href.includes('farms') && <button onClick={() => {navigate('/grains')}}>Return to List of Grains</button>}
       {!farm ? <p className="profile-error">{`404: Sorry, no farm with and id of '${farmID}' exists.`}</p> :
         <section>
           <div className="farmer-view-header">
