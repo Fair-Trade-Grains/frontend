@@ -12,7 +12,6 @@ ReactModal.setAppElement('#root')
 const UpdateFarmerProfile = () => {
   
   const { farmID } = useParams()
-  console.log(farmID)
   const [showModal, setShowModal] = useState(false)
 
   const handleOpendModal = () => {
