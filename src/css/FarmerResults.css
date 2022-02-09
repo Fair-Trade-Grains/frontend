@@ -48,3 +48,10 @@
   transform: scale(1.05);
   cursor: pointer;
 }
+
+.loading-message {
+  text-align: center;
+  color: white;
+  margin-top: 15px;
+  font-size: 36px;
+}
