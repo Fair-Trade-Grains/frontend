@@ -18,13 +18,12 @@ const FarmerResults = () => {
 
   const navigate = useNavigate()
 
-  const [farms, setFarms] = useState([])
   const [search, setSearch] = useState('')
   const [filtered, setFiltered] = useState([])
 
   const { loading, error, data } = useQuery(GET_FARMERS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className='loading-message'>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   const farmCards = data.allFarmers.map(farm => {
@@ -48,7 +47,7 @@ const FarmerResults = () => {
   })
 
   const handleChange = (searchText) => {
-    const farmsFiltered = farms.filter(farm => farm.name.toLowerCase().includes(searchText))
+    const farmsFiltered = data.allFarmers.filter(farm => farm.name.toLowerCase().includes(searchText))
     setFiltered(farmsFiltered)
     setSearch(searchText)
   }
@@ -58,18 +57,12 @@ const FarmerResults = () => {
     navigate(`/new-grain/${event.target.id}`)
   }
 
-  // useEffect(() => {
-  //   setFarms(data.allFarmers)
-  // }, [])
-
   return (
     <div className="farm-browse-view">
       <Search handleChange={handleChange}/>
       <section className="farms-container">
         {(search && !filteredCards.length) && <p>No farms match the current search. Please start over!</p>}
-        {search ? filteredCards :
-          farms ? farmCards : <p className='loading-message'>Loading . . .</p>
-        }
+        {search ? filteredCards : farmCards}
       </section>
     </div>
   )
