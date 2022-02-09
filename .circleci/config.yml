@@ -2,13 +2,14 @@
 version: 2.1
 orbs:
 #   node: circleci/node@2
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@9.4.1
 workflows:
   build:
     jobs:
 #       - cypress/install:
 #           build: 'npm run build' # run a custom app build step
-      - cypress/run:
+      - cypress/run
+#       :
 #           requires:
 #             - cypress/install
 #           record: true # record results on Cypress Dashboard
