@@ -6,9 +6,9 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install:
+      - cypress-io/install:
           build: 'npm run build' # run a custom app build step
-      - cypress/run:
+      - cypress-io/run:
           requires:
             - cypress/install
           record: true # record results on Cypress Dashboard
