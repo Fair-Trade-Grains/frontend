@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router'
 import '../css/FarmerResults.css';
-import Search from './Search'
-import data from '../mockData'
+import Search from './Search';
+import { useQuery, gql } from '@apollo/client';
+
+const GET_FARMERS = gql`
+  query {
+    allFarmers {
+      name
+      id
+      region
+    }
+  }
+`;
 
 const FarmerResults = () => {
 
@@ -11,41 +21,46 @@ const FarmerResults = () => {
   const [farms, setFarms] = useState([])
   const [search, setSearch] = useState('')
   const [filtered, setFiltered] = useState([])
-  
-  const farmCards = farms.map(farm => {
+
+  const { loading, error, data } = useQuery(GET_FARMERS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  const farmCards = data.allFarmers.map(farm => {
     return (
       <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
         <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Profile / Update Grains</button>
       </div>
-      )
-    })
-    
-    const filteredCards = filtered.map(farm => {
-      return (
-        <div key={farm.id} className="farm-result">
+    )
+  })
+
+  const filteredCards = filtered.map(farm => {
+    return (
+      <div key={farm.id} className="farm-result">
         <p>{farm.name}</p>
         <p>{farm.region}</p>
         <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Profile / Update Grains</button>
       </div>
     )
   })
-  
-  useEffect(() => {
-    setFarms(data.farms)
-  }, [])
-  
+
   const handleChange = (searchText) => {
     const farmsFiltered = farms.filter(farm => farm.name.toLowerCase().includes(searchText))
     setFiltered(farmsFiltered)
     setSearch(searchText)
   }
-  
+
   const navigateToProfile = (event) => {
     event.preventDefault()
     navigate(`/new-grain/${event.target.id}`)
   }
+
+  // useEffect(() => {
+  //   setFarms(data.allFarmers)
+  // }, [])
 
   return (
     <div className="farm-browse-view">
@@ -59,5 +74,6 @@ const FarmerResults = () => {
     </div>
   )
 }
+
 
 export default FarmerResults;
