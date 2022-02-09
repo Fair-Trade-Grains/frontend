@@ -7,10 +7,18 @@ import data from '../mockData';
 import { useQuery, gql } from '@apollo/client';
 
 
-
-// const { loading, error, data } = useQuery(GET_FARMER);
-//
-// console.log(data);
+const GET_FARMER = gql`
+  query {
+    {
+      farmerById(id: "1"){
+        id
+        name
+        bio
+        email
+      }
+    }
+  }
+`;
 
 const FarmerProfile = () => {
 
