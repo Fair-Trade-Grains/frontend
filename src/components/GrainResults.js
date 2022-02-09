@@ -46,8 +46,8 @@ const GetFarmers = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  
-  return data.allFarmers.reduce((list, farm) => {    
+
+  return data.allFarmers.reduce((list, farm) => {
     farm.grains.map(grain => {
       list.push(<Grain key={grain.id} grain={grain} farm={farm} />)
     })
@@ -99,8 +99,8 @@ const GrainResults = () => {
   return (
     <div className="grain-browse-view">
       <Search handleChange={handleChange} />
-      <GetFarmers />
       <section className="grains-container">
+        <GetFarmers />
         {(search && !filteredCards.length) && <p>No grains match the current search. Please start over!</p>}
         {search ? filteredCards :
           (grains && farms) ? grainCards : <p className='loading-message'>Loading . . .</p>
