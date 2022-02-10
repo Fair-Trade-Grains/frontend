@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../css/NewProfileForm.css';
 import ReactModal from 'react-modal';
 import usdaRegionMap from '../assets/usdaRegionMap.png'
+import { gql, useMutation } from '@apollo/client';
+
+import AddFarmer from './AddFarmer'
 
 ReactModal.setAppElement('#root')
 
@@ -30,6 +33,7 @@ class NewProfileForm extends Component {
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
+    this.updateCurrentProfile();
   }
 
   clearInputs = () => {
@@ -44,21 +48,25 @@ class NewProfileForm extends Component {
     })
   }
 
+  updateCurrentProfile = () => {
+    const newProfile = {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.business_phone,
+      address: this.state.address,
+      region: this.state.region,
+      bio: this.state.bio,
+      photoUrl: this.state.photo_path
+    }
+    this.setState({ profile: newProfile })
+  }
+
   submitProfile = event => {
     event.preventDefault();
     if (this.state.name && this.state.email && this.state.region && this.state.bio) {
-      const newProfile = {
-        name: this.state.name,
-        email: this.state.email,
-        business_phone: this.state.business_phone,
-        address: this.state.address,
-        region: this.state.region,
-        bio: this.state.bio,
-        photo_path: this.state.photo_path
-      }
-      console.log(newProfile)
+
       // here's where we're gonna write what happens when you submit a profile!
-      this.clearInputs();
+      // this.clearInputs();
     }
   }
 
@@ -146,7 +154,7 @@ render(){
           value={this.state.photo_path}
           onChange={event => this.handleChange(event)}
         />
-        <button className='profile-submit-btn' onClick={event => this.submitProfile(event)}>Submit</button>
+        <AddFarmer profile={this.state.profile} />
       </form>
 
       <ReactModal isOpen={this.state.showModal} className="map-modal-container">
