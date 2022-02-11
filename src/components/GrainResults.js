@@ -49,9 +49,15 @@ const GrainResults = () => {
   })
 
   const handleChange = (searchText) => {
-    console.log(grainCards);
-    const grainsFiltered = grainCards.filter(card => card.props.grain.name.toLowerCase().includes(searchText))
-    setFiltered(grainsFiltered)
+    const filteredList = data.allFarmers.reduce((filteredList, farm) => {
+      farm.grains.map(grain => {
+        if(grain.name.toLowerCase().includes(searchText)){
+          filteredList.push(grain)
+        }
+      })
+      return filteredList
+    }, [])
+    setFiltered(filteredList)
     setSearch(searchText)
   }
 
