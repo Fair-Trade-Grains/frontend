@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/NewGrainForm.css';
 
+import AddGrain from './AddGrain';
+
 class NewGrainForm extends Component {
   constructor() {
     super();
@@ -13,9 +15,24 @@ class NewGrainForm extends Component {
       farmers_notes: ''
     }
   }
-  
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
+    this.updateGrainProfile();
+  }
+
+  updateGrainProfile = () => {
+    const farmID = this.props.farmId
+    const newGrain = {
+      farmerId: parseInt(farmID),
+      name: this.state.name,
+      protein: parseFloat(this.state.protein),
+      testWeight: parseFloat(this.state.test_weight),
+      moisture: parseFloat(this.state.moisture),
+      fallingNumber: parseFloat(this.state.falling_number),
+      farmersNotes: this.state.farmers_notes
+    }
+    this.setState({ grainProfile: newGrain })
   }
 
   clearInputs = () => {
@@ -32,17 +49,6 @@ class NewGrainForm extends Component {
   submitProfile = event => {
     event.preventDefault();
     if (this.state.name && this.state.protein && this.state.test_weight && this.state.moisture && this.state.falling_number) {
-      const farmID = this.props.farmId
-      const newGrain = {
-        farm_id: parseInt(farmID),
-        name: this.state.name,
-        protein: parseFloat(this.state.protein),
-        test_weight: parseFloat(this.state.test_weight),
-        moisture: parseFloat(this.state.moisture),
-        falling_number: parseFloat(this.state.falling_number),
-        farmers_notes: this.state.farmers_notes
-      }
-      console.log(newGrain)
       // the above farmID is being got from the UpdateFarmerProfile useParams and passed in to this form as props via farmId
       // console.log('farmID inside submit method: ', farmID)
       // here's where we're gonna write what happens when you submit a profile!
@@ -131,7 +137,7 @@ render(){
           value={this.state.farmers_notes}
           onChange={event => this.handleChange(event)}
           />
-        <button onClick={event => this.submitProfile(event)} className='update-farmer-nav-btn'>Submit</button>
+        <AddGrain grainProfile={this.state.grainProfile} />
         </form>
       </div>
     )
