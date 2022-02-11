@@ -42,7 +42,8 @@ const GrainResults = () => {
   }, [])
 
   const filteredCards = filtered.map(grain => {
-    let farm = grainCards.find(farm => grain.farm_id === farm.id)
+    let farm = data.allFarmers.find(farm => `${grain.farmerId}` === farm.id)
+    console.log(farm)
     return (
       <Grain key={grain.id} grain={grain} farm={farm}/>
     )
@@ -59,6 +60,8 @@ const GrainResults = () => {
     }, [])
     setFiltered(filteredList)
     setSearch(searchText)
+    console.log(filteredList, '<<<<filteredList')
+    console.log(data.allFarmers)
   }
 
   return (
