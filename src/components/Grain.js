@@ -1,33 +1,31 @@
 import React from 'react';
 import '../css/Grain.css';
-import { useNavigate } from 'react-router'
-import wheatIcon from '../assets/wheat.svg'
-import statsIcon from '../assets/stats.svg'
-import barnIcon from '../assets/barn.svg'
+import { useNavigate } from 'react-router';
+import wheatIcon from '../assets/wheat.svg';
+import statsIcon from '../assets/stats.svg';
+import barnIcon from '../assets/barn.svg';
 import { gql, useMutation } from '@apollo/client';
 
 const DELETE_GRAIN = gql`
 mutation DeleteGrain($input: DeleteGrainInput!){
   deleteGrain (input: $input) {
-          response
-          }
-      }
+      response
+    }
+  }
 `;
-
 
 const Grain = ({ grain, farm, stub }) => {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  let input;
   const [deleteGrain, { data, loading, error }] = useMutation(DELETE_GRAIN);
 
   if (loading) return 'Submitting...';
   if (error) return `Submission error! ${error.message}`;
 
   const navigateToProfile = (event) => {
-    event.preventDefault()
-    navigate(`/farms/${event.target.id}`)
+    event.preventDefault();
+    navigate(`/farms/${event.target.id}`);
   }
 
   return (
@@ -54,15 +52,15 @@ const Grain = ({ grain, farm, stub }) => {
               <p>{farm.region}</p>
             </div>
           </div>
-        <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Details!</button>
+          <button className='view-farm-btn' id={farm.id} onClick={(event) => { navigateToProfile(event) }}>View Details!</button>
         </>
       }
       {window.location.href.includes('new-grain') && <button className='delete-grain-btn' onClick={e => {
         e.preventDefault();
-        deleteGrain({ variables: { input: { id: grain.id } }});
-      }} type="submit">Delete Grain</button>}
+        deleteGrain({ variables: { input: { id: grain.id } } });
+      }} type='submit'>Delete Grain</button>}
     </div>
-  )
+  );
 }
 
 export default Grain;
