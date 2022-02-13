@@ -70,3 +70,27 @@ textarea {
   font-family: Montserrat;
   font-weight: bolder;
 }
+
+@media screen and (max-width: 1000px) {
+  .new-farm-form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .usda-region-map {
+    height: 400px;
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .new-farm-form {
+    padding: 10px;
+  }
+
+  .usda-region-map {
+    height: 300px;
+    width: 450px;
+  }
+}
