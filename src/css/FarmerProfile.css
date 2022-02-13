@@ -98,3 +98,21 @@
   font-family: 'Londrina Solid', sans-serif;
   padding-bottom: 5px;
 }
+
+@media screen and (max-width: 750px) {
+  .App-header {
+    height: 8vh;
+  }
+
+  .farm-profile-container {
+    margin-top: 8%;
+  }
+
+  .farmer-info-container {
+    width: 75%;
+  }
+
+  .farmer-view-body {
+    flex-direction: column;
+  }
+}
