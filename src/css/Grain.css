@@ -18,7 +18,7 @@
   align-items: center;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: white;
+  background-color: #EBE1DB;
   margin: 10px;
 
   height: 12vh;
@@ -27,6 +27,7 @@
 
 .grain-name {
   font-family: Montserrat;
+  color: #6f4404;
   display: flex;
   font-size: 1.2em;
   white-space: nowrap;

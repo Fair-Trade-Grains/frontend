@@ -36,14 +36,14 @@
   background-color: #6f4404;
   font-family: Raleway, sans-serif;
   font-size: 20px;
-  color: #da9100;
-  border: 1px solid #da9100;
+  color: #FFAA00;
+  border: 1px solid #FFAA00;
   border-radius: 150px;;
   padding: 3px 10px;
 }
 
 .view-farm-btn:hover {
-  background-color: #da9100;
+  background-color: #FFAA00;
   color: #6f4404;
   transform: scale(1.05);
   cursor: pointer;
