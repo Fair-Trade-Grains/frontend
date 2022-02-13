@@ -1,5 +1,4 @@
 describe('farmer profile page', () => {
-
   beforeEach(() => {
     cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
       req.reply({
@@ -114,7 +113,7 @@ describe('error message to user in the case of an invalid farmID', () => {
         fixture: 'allFarmersProfile.json'
       })
     })
-
+    
     // cy.visit('https://wheat-cute.herokuapp.com/farms/cat')
     cy.visit('http://localhost:3000/farms/cat')
 

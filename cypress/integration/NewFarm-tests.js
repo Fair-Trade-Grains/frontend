@@ -1,12 +1,5 @@
 describe('new farm form', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
-      req.reply({
-        statusCode: 200,
-        fixture: 'allFarmersGrainResults.json'
-      })
-    })
-    
     // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
     cy.visit('http://localhost:3000/create-farmer')
   })
@@ -75,15 +68,8 @@ describe('new farm form', () => {
   })
 })
 
-describe('pop up map modal', () => {
+describe('pop up modal with regions map', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
-      req.reply({
-        statusCode: 200,
-        fixture: 'allFarmersGrainResults.json'
-      })
-    })
-
     // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
     cy.visit('http://localhost:3000/create-farmer')
   })
@@ -112,13 +98,6 @@ describe('pop up map modal', () => {
 
 describe('form functionality', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
-      req.reply({
-        statusCode: 200,
-        fixture: 'allFarmersGrainResults.json'
-      })
-    })
-
     // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
     cy.visit('http://localhost:3000/create-farmer')
   })
@@ -196,30 +175,30 @@ describe('form functionality', () => {
     cy.get('.new-farm-form select').should('have.value', 'Great Lakes')
   })
 
-  // it('should clear inputs when submit is clicked if required fields have value', () => {
-  //   cy.get('.new-farm-form input').eq(0).type('Farmer John')
-  //   cy.get('.new-farm-form input').eq(1).type('farmingGuy001@gmail.com')
-  //   cy.get('.new-farm-form select').select('Great Lakes')
-  //   cy.get('.new-farm-form textarea').type("We are a biodynamic farm growing rye and raising buffalo.")
+  it('should give an error message if not all required fields are filled with a click on the submit', () => {
+    cy.get('.new-farm-form input').eq(0).type('Farmer John')
+    cy.get('.new-farm-form input').eq(1).type('farmingGuy001@gmail.com')
+    cy.get('.new-farm-form').contains('Please fill out all required fields.').should('not.exist')
+    cy.get('.profile-submit-btn').click()
+    cy.get('.new-farm-form').contains('Please fill out all required fields.')
+  })
 
-  //   cy.get('.profile-submit-btn').click()
-  // })
+  it('should clear inputs and redirect user when submit is clicked if required fields have value', () => {
+    cy.get('.new-farm-form input').eq(0).type('Farmer John')
+    cy.get('.new-farm-form input').eq(1).type('farmingGuy001@gmail.com')
+    cy.get('.new-farm-form select').select('Great Lakes')
+    cy.get('.new-farm-form textarea').type("We are a biodynamic farm growing rye and raising buffalo.")
+    cy.url().should('include', '/create-farmer')
+    cy.get('.profile-submit-btn').click()
+    cy.url().should('include', '/farms')
+  })
 })
 
 describe('navigation away from the new farm form', () => {
-  beforeEach(() => {
-    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
-      req.reply({
-        statusCode: 200,
-        fixture: 'allFarmersGrainResults.json'
-      })
-    })
-
+  it('should navigate back to the landing page if the header title is clicked', () => {
     // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
     cy.visit('http://localhost:3000/create-farmer')
-  })
 
-  it('should navigate back to the landing page if the header title is clicked', () => {
     cy.get('.new-profile-form').should('exist')
     cy.get('.landing-container').should('not.exist')
 
