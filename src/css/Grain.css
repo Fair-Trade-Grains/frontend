@@ -71,3 +71,53 @@
   color: white;
   border: 1px solid #BF2323;
 }
+
+@media screen and (min-width: 1100px) {
+  .grain-result {
+    width: 65%;
+  }
+
+  .grain-card-stub {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .grain-result {
+    width: 85%;
+  }
+
+  .grain-card-stub {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grain-result {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  .grain-card-stub {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .grain-result {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    height: auto;
+  }
+
+  .grain-name,
+  .grain-stats,
+  .farmer-stats,
+  .view-farm-btn {
+    margin: 5px;
+  }
+
+  .grain-card-stub {
+    width: 90%;
+  }
+}
