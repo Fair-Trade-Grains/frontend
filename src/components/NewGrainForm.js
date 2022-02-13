@@ -71,9 +71,10 @@ render(){
           onChange={event => this.handleChange(event)}
           required
         />
+        <div className='form-numbers'>
         <label htmlFor='protein'>Protein: <span className='asterisk'>*</span></label>
         <input
-          className='new-grain-input'
+          className='new-grain-input numeral'
           type='number'
           placeholder='12.0'
           id='protein'
@@ -87,7 +88,7 @@ render(){
         />
         <label htmlFor='test_weight'>Test Weight: <span className='asterisk'>*</span></label>
         <input
-          className='new-grain-input'
+          className='new-grain-input numeral'
           type='number'
           placeholder='60'
           id='test_weight'
@@ -101,7 +102,7 @@ render(){
         />
         <label htmlFor='moisture'>Moisture: <span className='asterisk'>*</span></label>
         <input
-          className='new-grain-input'
+          className='new-grain-input numeral'
           type='number'
           placeholder='11.5'
           name='moisture'
@@ -115,7 +116,7 @@ render(){
         />
         <label htmlFor='falling_number'>Falling Number: <span className='asterisk'>*</span></label>
         <input
-          className='new-grain-input'
+          className='new-grain-input numeral'
           type='number'
           placeholder='300'
           id='falling_number'
@@ -127,6 +128,7 @@ render(){
           onChange={event => this.handleChange(event)}
           required
         />
+        </div>
         <label htmlFor='farmers_notes'>Any notes to share on this grain: </label>
         <input
           className='new-grain-input'

@@ -1,5 +1,7 @@
-.ReactModal__Content {
+.new-grain-modal {
   inset: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .new-grain-container {
@@ -13,25 +15,47 @@
 }
 
 .new-grain-form {
+  background-color: #EBE1DB;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: white;
+  font-size: 18px;
 
   height: 80%;
-  width: 70%;
+  width: 50%;
   margin: 2%;
 }
 
 .new-grain-input {
   width: 50%;
+  height: 1.5em;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.form-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  text-align: left;
+}
+
+.close-modal-btn {
+  margin-top: 5%;
+  width: auto;
+  align-self: center;
 }
 
 .close-modal-btn:hover {
   background-color: #BF2323;
   color: white;
   border: 1px solid #BF2323;
+}
+
+.numeral {
+  width: 50%;
 }
