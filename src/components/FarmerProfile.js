@@ -39,15 +39,21 @@ const FarmerProfile = () => {
   const { loading, error, data } = useQuery(GET_FARMERS);
 
   if (loading) return <p className='loading-message'>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>Error connecting to the server, please try again later.</p>;
 
-  const farm = data.allFarmers.find(farm => farm.id === farmID)
+  let farm = false
+  let grainCards = false
+  let validPath = data.allFarmers.some(farm => farm.id === farmID)
 
-  const grainCards = farm.grains.map(grain => {
-      return (
-        <Grain key={grain.id} grain={grain} stub={'grain-card-stub'}/>
-      )
-    })
+  if (validPath) {
+    farm = data.allFarmers.find(farm => farm.id === farmID)
+    grainCards = farm.grains.map(grain => {
+        return (
+          <Grain key={grain.id} grain={grain} stub={'grain-card-stub'}/>
+        )
+      })
+  }
+
 
   return (
     <div className="farm-profile-container">
@@ -67,7 +73,7 @@ const FarmerProfile = () => {
               <article className="farmer-info">
                 <p className='invitation'>Reach out to us at:</p>
                 <p>{farm.email}</p>
-                <p>{farm.business_phone}</p>
+                <p>{farm.phone}</p>
                 <p>{farm.address}</p>
               </article>
             </div>
