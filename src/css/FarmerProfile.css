@@ -24,6 +24,9 @@
   font-family: 'Londrina Solid', cursive;
   font-size: 36px;
   padding: 0 15px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .farm-region {

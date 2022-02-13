@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router'
 import '../css/FarmerResults.css';
 import Search from './Search';
+import barnIcon from '../assets/barn.svg';
+import mapIcon from '../assets/map.svg';
 import { useQuery, gql } from '@apollo/client';
 
 const GET_FARMERS = gql`
@@ -29,8 +31,14 @@ const FarmerResults = () => {
   const farmCards = data.allFarmers.map(farm => {
     return (
       <div key={farm.id} className="farm-result">
-        <p>{farm.name}</p>
-        <p>{farm.region}</p>
+        <div className='farm-name'>
+          <img className='barn-icon' src={barnIcon} />
+          <p>{farm.name}</p>
+        </div>
+        <div className='farm-results-region'>
+          <img className='map-icon' src={mapIcon} />
+          <p>{farm.region}</p>
+        </div>
         <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Profile / Update Grains</button>
       </div>
     )
@@ -39,8 +47,14 @@ const FarmerResults = () => {
   const filteredCards = filtered.map(farm => {
     return (
       <div key={farm.id} className="farm-result">
+      <div className='farm-name'>
+        <img className='barn-icon' src={barnIcon} />
         <p>{farm.name}</p>
+      </div>
+      <div className='farm-results-region'>
+        <img className='map-icon' src={mapIcon} />
         <p>{farm.region}</p>
+      </div>
         <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Profile / Update Grains</button>
       </div>
     )

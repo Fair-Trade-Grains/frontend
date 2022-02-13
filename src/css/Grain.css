@@ -1,12 +1,14 @@
 .wheat-icon,
 .stats-icon,
-.barn-icon {
+.barn-icon,
+.map-icon {
   height: 30px;
   width: 30px;
 }
 
 .stats-icon,
-.barn-icon {
+.barn-icon,
+.map-icon {
   margin-right: 10px;
 }
 
