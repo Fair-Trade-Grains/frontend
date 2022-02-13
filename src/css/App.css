@@ -26,11 +26,6 @@ a {
   text-decoration: none;
 }
 
-span {
-  font-family: 'Londrina Outline', cursive;
-  font-size: 64px;
-}
-
 main {
   height: 80vh;
   width: 100%;
@@ -58,4 +53,9 @@ button:hover {
   color: #6f4404;
   transform: scale(1.05);
   cursor: pointer;
+}
+
+.cute {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 64px;
 }

@@ -10,7 +10,7 @@ import { useParams } from 'react-router'
 ReactModal.setAppElement('#root')
 
 const UpdateFarmerProfile = () => {
-  
+
   const { farmID } = useParams()
   const [showModal, setShowModal] = useState(false)
 
@@ -32,7 +32,7 @@ const UpdateFarmerProfile = () => {
         <FarmerProfile />
       </section>
       <ReactModal isOpen={showModal}>
-        <button onClick={() => { handleCloseModal() }} className="update-farmer-nav-btn">Close</button>
+        <button onClick={() => { handleCloseModal() }} className="close-modal-btn">Close</button>
         <NewGrainForm farmId={farmID}/>
       </ReactModal>
     </div>

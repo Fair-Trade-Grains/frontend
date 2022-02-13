@@ -61,3 +61,13 @@
   justify-content: space-between;
   padding-right: 20px;
 }
+
+.delete-grain-btn {
+  font-size: 16px;
+}
+
+.delete-grain-btn:hover {
+  background-color: #BF2323;
+  color: white;
+  border: 1px solid #BF2323;
+}

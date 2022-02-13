@@ -75,7 +75,7 @@ render(){
     <div className='new-profile-form'>
       <button onClick={() => { this.handleOpendModal() }}>See map of the regions!</button>
       <form className="new-farm-form">
-        <label htmlFor='name'>Your name or your farm's name: *required*</label>
+        <label htmlFor='name'>Your name or your farm's name: <span className='asterisk'>*</span></label>
         <input className="new-farm-form-input"
           type='text'
           id='name'
@@ -85,7 +85,7 @@ render(){
           onChange={event => this.handleChange(event)}
           required
         />
-        <label htmlFor='email'>Your business email: *required*</label>
+        <label htmlFor='email'>Your business email: <span className='asterisk'>*</span></label>
         <input className="new-farm-form-input"
           type='text'
           id='email'
@@ -113,7 +113,7 @@ render(){
           value={this.state.address}
           onChange={event => this.handleChange(event)}
         />
-        <label htmlFor='region'>Select your region (see the reference map above this form): *required*</label>
+        <label htmlFor='region'>Select your region (see the reference map above this form): <span className='asterisk'>*</span></label>
         <select className="new-farm-form-input"
           id='region'
           name='region'
@@ -135,7 +135,7 @@ render(){
           <option value='Northwest'>Northwest</option>
           <option value='Pacific'>Pacific</option>
         </select>
-        <label htmlFor='bio'>Personal and/or farm bio: *required*</label>
+        <label htmlFor='bio'>Personal and/or farm bio: <span className='asterisk'>*</span></label>
         <textarea className="new-farm-form-input"
           id='bio'
           placeholder='Tell us a little about your organization and your farming practices! (1000 characters or less)'
@@ -154,11 +154,12 @@ render(){
           value={this.state.photo_path}
           onChange={event => this.handleChange(event)}
         />
+        <p> (Fields with a <span className='asterisk'>*</span> are required.)</p>
         <AddFarmer profile={this.state.profile} />
       </form>
 
       <ReactModal isOpen={this.state.showModal} className="map-modal-container">
-        <button onClick={() => { this.handleCloseModal() }} className="update-farmer-nav-btn">Close</button>
+        <button onClick={() => { this.handleCloseModal() }} className="close-modal-btn">Close</button>
         <img className="usda-region-map" src={usdaRegionMap} alt="USDA Agriculture Regions Map"/>
       </ReactModal>
       </div>

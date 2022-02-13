@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Link to='/'>
-          <h1>Wheat<span>cute</span></h1>
+          <h1>Wheat<span className='cute'>cute</span></h1>
         </Link>
       </header>
       <main>

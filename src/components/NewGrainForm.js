@@ -60,7 +60,7 @@ render(){
   return(
     <div className='new-grain-container'>
       <form className='new-grain-form'>
-        <label htmlFor='name'>Grain name/type: *required*</label>
+        <label htmlFor='name'>Grain name/type: <span className='asterisk'>*</span></label>
         <input
           className='new-grain-input'
           type='text'
@@ -71,7 +71,7 @@ render(){
           onChange={event => this.handleChange(event)}
           required
         />
-        <label htmlFor='proteiin'>Protein: *required*</label>
+        <label htmlFor='protein'>Protein: <span className='asterisk'>*</span></label>
         <input
           className='new-grain-input'
           type='number'
@@ -85,7 +85,7 @@ render(){
           onChange={event => this.handleChange(event)}
           required
         />
-        <label htmlFor='test_weight'>Test Weight: *required*</label>
+        <label htmlFor='test_weight'>Test Weight: <span className='asterisk'>*</span></label>
         <input
           className='new-grain-input'
           type='number'
@@ -99,7 +99,7 @@ render(){
           onChange={event => this.handleChange(event)}
           required
         />
-        <label htmlFor='moisture'>Moisture: *required*</label>
+        <label htmlFor='moisture'>Moisture: <span className='asterisk'>*</span></label>
         <input
           className='new-grain-input'
           type='number'
@@ -113,7 +113,7 @@ render(){
           onChange={event => this.handleChange(event)}
           required
         />
-        <label htmlFor='falling_number'>Falling Number: *required*</label>
+        <label htmlFor='falling_number'>Falling Number: <span className='asterisk'>*</span></label>
         <input
           className='new-grain-input'
           type='number'
@@ -137,6 +137,7 @@ render(){
           value={this.state.farmers_notes}
           onChange={event => this.handleChange(event)}
           />
+          <p> (Fields with a <span className='asterisk'>*</span> are required.)</p>
         <AddGrain grainProfile={this.state.grainProfile} />
         </form>
       </div>
