@@ -21,7 +21,6 @@ const Search = ({handleChange}) => {
         value={text}
         onChange={(event) => {updateChange(event)}}
       />
-      <button>SEARCH</button>
     </form>
   )
 }
