@@ -1,0 +1,60 @@
+{
+  "data": {
+    "allFarmers": [
+      {
+        "name": "Clark Kent",
+        "id": "1",
+        "email": "c.kent@dailyplanet.com",
+        "phone": "555-555-5555",
+        "address": "1234 Farm Rd, Smallville KA",
+        "region": "South",
+        "bio": "A super-son of farmers who practices earth saving techniques. Restorative Farming.",
+        "photoUrl": "picture_link_here.jpeg",
+        "grains": [
+          {
+            "name": "Amaranth",
+            "id": "1",
+            "moisture": 12.0,
+            "fallingNumber": 236.0,
+            "protein": 13.0,
+            "testWeight": 55.0,
+            "farmersNotes": "N/A",
+            "farmerId": 1
+          },
+          {
+            "name": "Rye",
+            "id": "2",
+            "moisture": 8.0,
+            "fallingNumber": 200.0,
+            "protein": 14.0,
+            "testWeight": 60.0,
+            "farmersNotes": "N/A",
+            "farmerId": 1
+          }
+        ]
+      },
+      {
+        "name": "Owen Lars",
+        "id": "2",
+        "email": "uncleowen@moisturefarms.com",
+        "phone": "555-555-5555",
+        "address": "5678 Dusty Rd, Tatooine, OK",
+        "region": "Mountain",
+        "bio": "Starting a farming rebellion with my wife and nephew. Biosynthesis.",
+        "photoUrl": "picture_link_here.jpeg",
+        "grains": [
+          {
+            "name": "Wheat-Spelt",
+            "id": "3",
+            "moisture": 14.0,
+            "fallingNumber": 175.0,
+            "protein": 10.0,
+            "testWeight": 54.0,
+            "farmersNotes": "N/A",
+            "farmerId": 2
+          }
+        ]
+      }
+    ]
+  }
+}
