@@ -148,9 +148,8 @@ class NewProfileForm extends Component {
           />
           <AddFarmer profile={this.state.profile} clearInputs={this.clearInputs}/>
         </form>
-
         <ReactModal isOpen={this.state.showModal} className='map-modal-container'>
-          <button onClick={() => { this.handleCloseModal() }} className='update-farmer-nav-btn'>Close</button>
+          <button onClick={() => { this.handleCloseModal() }} className='close-modal-btn'>Close</button>
           <img className='usda-region-map' src={usdaRegionMap} alt='USDA Agriculture Regions Map' />
         </ReactModal>
       </div>

@@ -26,11 +26,6 @@ a {
   text-decoration: none;
 }
 
-span {
-  font-family: 'Londrina Outline', cursive;
-  font-size: 64px;
-}
-
 main {
   height: 80vh;
   width: 100%;
@@ -41,4 +36,26 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+button {
+  background-color: #6f4404;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  color: #FFAA00;
+  border: 1px solid #FFAA00;
+  border-radius: 150px;;
+  padding: 3px 10px;
+}
+
+button:hover {
+  background-color: #FFAA00;
+  color: #6f4404;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.cute {
+  font-family: 'Londrina Outline', cursive;
+  font-size: 64px;
 }

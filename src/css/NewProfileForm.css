@@ -6,7 +6,6 @@
 
   height: 90vh;
   width: 100%;
-  margin: 2%;
 }
 
 .new-farm-form {
@@ -16,7 +15,8 @@
   justify-content: space-evenly;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: white;
+  background-color: #EBE1DB;
+  font-size: 18px;
 
   height: 80%;
   width: 50%;
@@ -24,7 +24,7 @@
 }
 
 .new-farm-form-input {
-  width: 75%;
+  width: 70%;
   font-size: 18px;
   padding: 2px;
 }
@@ -58,4 +58,39 @@
 .usda-region-map {
   height: 500px;
   width: 750px;
+  margin-top: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+.asterisk {
+  color: red;
+  font-family: Montserrat;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 1000px) {
+  .new-farm-form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .usda-region-map {
+    height: 400px;
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .new-farm-form {
+    padding: 10px;
+  }
+
+  .usda-region-map {
+    height: 300px;
+    width: 450px;
+  }
 }

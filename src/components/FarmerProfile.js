@@ -62,9 +62,9 @@ const FarmerProfile = () => {
             <h2 className='farm-name'>{farm.name}</h2>
             <p className='farm-region'>Region: {farm.region}</p>
           </div>
-          <div className='farmer-view-body'>
-            <div className='farmer-info-container'>
-              <img src={wheatField} alt='wheat field ready for harvest under a cloudy blue sky' />
+          <div className="farmer-view-body">
+            <div className="farmer-info-container">
+              <img className='profile-pic' src={wheatField} alt="wheat field ready for harvest under a cloudy blue sky" />
               <article className='farmer-bio'>
                 <p>{farm.bio}</p>
               </article>
