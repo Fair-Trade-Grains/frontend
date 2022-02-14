@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../css/GrainResults.css';
 import Search from './Search'
 import Grain from './Grain'
-<<<<<<< HEAD
-import { useQuery, gql } from '@apollo/client';
-=======
 import data from '../mockData'
 import { useQuery, gql } from '@apollo/client';
 
@@ -57,7 +54,6 @@ const GetFarmers = () => {
     return list
   }, [])
 }
->>>>>>> beta
 
 const GET_FARMERS = gql`
   query {

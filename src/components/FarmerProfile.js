@@ -3,7 +3,6 @@ import '../css/FarmerProfile.css';
 import { useParams, useNavigate } from 'react-router'
 import Grain from './Grain'
 import wheatField from '../assets/wheatField.png'
-<<<<<<< HEAD
 import { useQuery, gql } from '@apollo/client';
 
 
@@ -27,20 +26,6 @@ const GET_FARMERS = gql`
         testWeight
         farmersNotes
         farmerId
-=======
-import data from '../mockData';
-import { useQuery, gql } from '@apollo/client';
-
-
-const GET_FARMER = gql`
-  query {
-    {
-      farmerById(id: "1"){
-        id
-        name
-        bio
-        email
->>>>>>> beta
       }
     }
   }
