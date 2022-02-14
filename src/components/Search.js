@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../css/Search.css';
 
-const Search = ({handleChange}) => {
+const Search = ({ handleChange }) => {
 
-  const [text, setText] = useState("")
-  const labelText = window.location.href.includes('grains') ? 'Grain Type' : 'Farm Name'
+  const [text, setText] = useState('');
+  const labelText = window.location.href.includes('grains') ? 'Grain Type' : 'Farm Name';
 
   const updateChange = (event) => {
-    setText(event.target.value)
-    handleChange(event.target.value.toLowerCase())
+    setText(event.target.value);
+    handleChange(event.target.value.toLowerCase());
   }
 
   return (

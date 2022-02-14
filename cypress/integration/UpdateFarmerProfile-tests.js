@@ -1,4 +1,4 @@
-describe('farmer profile page', () => {
+describe('the farmer view of their profile page', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
       req.reply({
@@ -7,8 +7,8 @@ describe('farmer profile page', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/farms/2')
-    cy.visit('http://localhost:3000/farms/2')
+    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/2')
+    cy.visit('http://localhost:3000/new-grain/2')
   })
 
   it('should have a site header with an h1', () => {
@@ -16,9 +16,10 @@ describe('farmer profile page', () => {
     cy.get('header h1').contains('Wheatcute')
   })
 
-  it('should have a main with a farm profile container and a return to grains button', () => {
-    cy.get('main .farm-profile-container').should('exist')
-    cy.get('.farm-profile-container button').contains('Return to List of Grains')
+  it('should have a main with a farm profile container and a return to farms link and add new grain button', () => {
+    cy.get('main .update-farmer-view').should('exist')
+    cy.get('.update-farmer-view a').contains('Return to Farm List')
+    cy.get('.update-farmer-view button').contains('Add a New Grain')
   })
 
   it('should have a profile header with the farm name and region', () => {
@@ -54,9 +55,13 @@ describe('farmer profile page', () => {
     cy.get('.grain-result').find('.grain-stats p').eq(2).contains('Test Weight: 54')
     cy.get('.grain-result').find('.grain-stats p').eq(3).contains('Falling Number: 175')
   })
+
+  it('should have a button to delete a grain', () => {
+    cy.get('.grain-result button').contains('Delete Grain')
+  })
 })
 
-describe('navigation away from the farm profile view', () => {
+describe('navigation away from the farm update profile view', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
       req.reply({
@@ -65,43 +70,43 @@ describe('navigation away from the farm profile view', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/farms/2')
-    cy.visit('http://localhost:3000/farms/2')
+    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/2')
+    cy.visit('http://localhost:3000/new-grain/2')
   })
 
   it('should navigate to back to the landing page if the site title is clicked', () => {
     cy.get('.farm-profile-container').should('exist')
     cy.get('.landing-container').should('not.exist')
 
-    cy.url().should('include', '/farms/2')
-    
+    cy.url().should('include', '/new-grain/2')
+
     cy.get('.App-header h1').click()
 
     cy.get('.farm-profile-container').should('not.exist')
     cy.get('.landing-container').should('exist')
 
-    cy.url().should('not.include', 'farms/2')
+    cy.url().should('not.include', 'new-grain/2')
   })
 
-  it('should navigate back to the grain results if the Return to Grains List link is clicked', () => {
+  it('should navigate back to the farm results if the Return to Farm List link is clicked', () => {
     cy.get('.farm-profile-container').should('exist')
-    cy.get('.grain-browse-view').should('not.exist')
+    cy.get('.farm-browse-view').should('not.exist')
 
-    cy.url().should('not.include', '/grains')
+    cy.url().should('not.include', '/farms')
 
     cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
       req.reply({
         statusCode: 200,
-        fixture: 'allFarmersGrainResults.json'
+        fixture: 'allFarmersFarmerResults.json'
       })
     })
 
-    cy.get('.farm-profile-container button').click()
+    cy.get('.update-farmer-view a').click()
 
     cy.get('.farm-profile-container').should('not.exist')
-    cy.get('.grain-browse-view').should('exist')
+    cy.get('.farm-browse-view').should('exist')
 
-    cy.url().should('include', '/grains')
+    cy.url().should('include', '/farms')
   })
 })
 
@@ -113,9 +118,9 @@ describe('error message to user in the case of an invalid farmID', () => {
         fixture: 'allFarmersProfile.json'
       })
     })
-    
-    // cy.visit('https://wheat-cute.herokuapp.com/farms/cat')
-    cy.visit('http://localhost:3000/farms/cat')
+
+    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/cat')
+    cy.visit('http://localhost:3000/new-grain/cat')
 
     cy.get('.App-header h1').contains('Wheatcute')
 
@@ -123,3 +128,36 @@ describe('error message to user in the case of an invalid farmID', () => {
     cy.get('.profile-error').contains("404: Sorry, no farm with and id of 'cat' exists.")
   })
 })
+
+describe('new grain modal', () => {
+  beforeEach(() => {
+    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
+      req.reply({
+        statusCode: 200,
+        fixture: 'allFarmersProfile.json'
+      })
+    })
+    
+    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
+    cy.visit('http://localhost:3000/new-grain/1')
+  })
+  
+  it('should be able to open the new-grain form modal', () => {
+    cy.get('.new-grain-modal').should('not.exist')
+    cy.get('.nav-btn-container button').click()
+    cy.get('.new-grain-modal').should('exist')
+  })
+  
+  it('should be able to close the modal', () => {
+    cy.get('.new-grain-modal').should('not.exist')
+    cy.get('.nav-btn-container button').click()
+    cy.get('.new-grain-modal').should('exist')
+    cy.get('.new-grain-modal button').eq(0).contains('Close')
+    cy.get('.new-grain-modal button').eq(0).click()
+    cy.get('.new-grain-modal').should('not.exist')
+  })
+})
+
+// describe('delete a grain', () => {
+//   it('should be able to delete a grain from their profile', () => { })
+// })

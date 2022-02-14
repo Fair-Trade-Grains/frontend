@@ -1,13 +1,5 @@
 describe('landing page', () => {
-
   beforeEach(() => {
-    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
-      req.reply({
-        statusCode: 200,
-        fixture: 'allFarmersGrainResults.json'
-      })
-    })
-
     // cy.visit('https://wheat-cute.herokuapp.com/')
     cy.visit('http://localhost:3000/')
   })
@@ -41,6 +33,11 @@ describe('landing page', () => {
 
 describe('navigation away from the landing page view', () => {
   beforeEach(() => {
+    // cy.visit('https://wheat-cute.herokuapp.com/')
+    cy.visit('http://localhost:3000/')
+  })
+
+  it('should navigate to the grain results page if the Connect link is clicked', () => {
     cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
       req.reply({
         statusCode: 200,
@@ -48,11 +45,6 @@ describe('navigation away from the landing page view', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/')
-    cy.visit('http://localhost:3000/')
-  })
-
-  it('should navigate to the grain results page if the Connect link is clicked', () => {
     cy.get('.landing-container').should('exist')
     cy.get('.grain-browse-view').should('not.exist')
 
@@ -81,6 +73,13 @@ describe('navigation away from the landing page view', () => {
   })
 
   it('should navigate to the farmer results page if the Existing Farm link is clicked', () => {
+    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
+      req.reply({
+        statusCode: 200,
+        fixture: 'allFarmersFarmerResults.json'
+      })
+    })
+
     cy.get('.landing-container').should('exist')
     cy.get('.farm-browse-view').should('not.exist')
 
