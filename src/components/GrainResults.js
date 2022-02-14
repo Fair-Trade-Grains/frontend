@@ -32,7 +32,7 @@ const GrainResults = () => {
   const { loading, error, data } = useQuery(GET_FARMERS);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: Unable to connect to server, try again later.</p>;
+  if (error) return <p>Error: Unable to connect to the server, please try again later.</p>;
 
   const grainCards = data.allFarmers.reduce((list, farm) => {
     farm.grains.map(grain => {
