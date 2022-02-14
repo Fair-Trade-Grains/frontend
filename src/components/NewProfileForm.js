@@ -67,7 +67,7 @@ class NewProfileForm extends Component {
       <div className='new-profile-form'>
         <button onClick={() => { this.handleOpenModal() }}>See map of the regions!</button>
         <form className='new-farm-form'>
-          <label htmlFor='name'>Your name or your farm's name: *required*</label>
+          <label htmlFor='name'>Your name or your farm's name: <span className='asterisk'>*</span></label>
           <input className='new-farm-form-input'
             type='text'
             id='name'
@@ -77,7 +77,7 @@ class NewProfileForm extends Component {
             onChange={event => this.handleChange(event)}
             required
           />
-          <label htmlFor='email'>Your business email: *required*</label>
+          <label htmlFor='email'>Your business email: <span className='asterisk'>*</span></label>
           <input className='new-farm-form-input'
             type='text'
             id='email'
@@ -105,7 +105,7 @@ class NewProfileForm extends Component {
             value={this.state.address}
             onChange={event => this.handleChange(event)}
           />
-          <label htmlFor='region'>Select your region (see the reference map above this form): *required*</label>
+          <label htmlFor='region'>Select your region (see the reference map above this form): <span className='asterisk'>*</span></label>
           <select className='new-farm-form-input'
             id='region'
             name='region'
@@ -127,7 +127,7 @@ class NewProfileForm extends Component {
             <option value='Northwest'>Northwest</option>
             <option value='Pacific'>Pacific</option>
           </select>
-          <label htmlFor='bio'>Personal and/or farm bio: *required*</label>
+          <label htmlFor='bio'>Personal and/or farm bio: <span className='asterisk'>*</span></label>
           <textarea className='new-farm-form-input'
             id='bio'
             placeholder='Tell us a little about your organization and your farming practices! (1000 characters or less)'
@@ -146,6 +146,7 @@ class NewProfileForm extends Component {
             value={this.state.photo_path}
             onChange={event => this.handleChange(event)}
           />
+          <p>Fields marked with an asterisk (<span className='asterisk'>*</span>) are required.</p>
           <AddFarmer profile={this.state.profile} clearInputs={this.clearInputs}/>
         </form>
         <ReactModal isOpen={this.state.showModal} className='map-modal-container'>
