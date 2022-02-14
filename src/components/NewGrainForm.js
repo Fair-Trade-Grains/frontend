@@ -51,7 +51,7 @@ class NewGrainForm extends Component {
     return (
       <div className='new-grain-container'>
         <form className='new-grain-form'>
-          <label htmlFor='name'>Grain name/type: *</label>
+          <label htmlFor='name'>Grain name/type: <span className='asterisk'>*</span></label>
           <input
             className='new-grain-input'
             type='text'
@@ -62,9 +62,10 @@ class NewGrainForm extends Component {
             onChange={event => this.handleChange(event)}
             required
           />
-          <label htmlFor='proteiin'>Protein: *</label>
+          <div className='form-numbers'>
+          <label htmlFor='protein'>Protein: <span className='asterisk'>*</span></label>
           <input
-            className='new-grain-input'
+            className='new-grain-input numeral'
             type='number'
             placeholder='12.0'
             id='protein'
@@ -76,9 +77,9 @@ class NewGrainForm extends Component {
             onChange={event => this.handleChange(event)}
             required
           />
-          <label htmlFor='test_weight'>Test Weight: *</label>
+          <label htmlFor='test_weight'>Test Weight: <span className='asterisk'>*</span></label>
           <input
-            className='new-grain-input'
+            className='new-grain-input numeral'
             type='number'
             placeholder='60'
             id='test_weight'
@@ -90,9 +91,9 @@ class NewGrainForm extends Component {
             onChange={event => this.handleChange(event)}
             required
           />
-          <label htmlFor='moisture'>Moisture: *</label>
+          <label htmlFor='moisture'>Moisture: <span className='asterisk'>*</span></label>
           <input
-            className='new-grain-input'
+            className='new-grain-input numeral'
             type='number'
             placeholder='11.5'
             name='moisture'
@@ -104,9 +105,9 @@ class NewGrainForm extends Component {
             onChange={event => this.handleChange(event)}
             required
           />
-          <label htmlFor='falling_number'>Falling Number: *</label>
+          <label htmlFor='falling_number'>Falling Number: <span className='asterisk'>*</span></label>
           <input
-            className='new-grain-input'
+            className='new-grain-input numeral'
             type='number'
             placeholder='300'
             id='falling_number'
@@ -118,6 +119,7 @@ class NewGrainForm extends Component {
             onChange={event => this.handleChange(event)}
             required
           />
+          </div>
           <label htmlFor='farmers_notes'>Any notes to share on this grain: </label>
           <input
             className='new-grain-input'
@@ -128,6 +130,7 @@ class NewGrainForm extends Component {
             value={this.state.farmers_notes}
             onChange={event => this.handleChange(event)}
           />
+          <p>Fields marked with an asterisk (<span className='asterisk'>*</span>) are required.</p>
           <AddGrain grainProfile={this.state.grainProfile} clearInputs={this.clearInputs} closeModal={ this.props.closeModal}/>
         </form>
       </div>
