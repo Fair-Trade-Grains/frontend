@@ -26,8 +26,8 @@ const Grain = ({ grain, farm, stub }) => {
         <div>
           <p>Protein: {grain.protein}</p>
           <p>Moisture: {grain.moisture}</p>
-          <p>Test Weight: {grain.test_weight}</p>
-          <p>Falling Number: {grain.falling_number}</p>
+          <p>Test Weight: {grain.testWeight}</p>
+          <p>Falling Number: {grain.fallingNumber}</p>
         </div>
       </div>
       {farm &&

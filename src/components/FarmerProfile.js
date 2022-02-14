@@ -2,8 +2,23 @@ import React from 'react';
 import '../css/FarmerProfile.css';
 import { useParams, useNavigate } from 'react-router'
 import Grain from './Grain'
-import data from '../mockData'
 import wheatField from '../assets/wheatField.png'
+import data from '../mockData';
+import { useQuery, gql } from '@apollo/client';
+
+
+const GET_FARMER = gql`
+  query {
+    {
+      farmerById(id: "1"){
+        id
+        name
+        bio
+        email
+      }
+    }
+  }
+`;
 
 const FarmerProfile = () => {
 
