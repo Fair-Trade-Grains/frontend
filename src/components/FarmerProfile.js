@@ -3,18 +3,29 @@ import '../css/FarmerProfile.css';
 import { useParams, useNavigate } from 'react-router'
 import Grain from './Grain'
 import wheatField from '../assets/wheatField.png'
-import data from '../mockData';
 import { useQuery, gql } from '@apollo/client';
 
 
-const GET_FARMER = gql`
+const GET_FARMERS = gql`
   query {
-    {
-      farmerById(id: "1"){
-        id
+    allFarmers {
+      name
+      id
+      email
+      phone
+      address
+      region
+      bio
+      photoUrl
+      grains {
         name
-        bio
-        email
+        id
+        moisture
+        fallingNumber
+        protein
+        testWeight
+        farmersNotes
+        farmerId
       }
     }
   }
@@ -25,10 +36,14 @@ const FarmerProfile = () => {
   const navigate = useNavigate()
   const { farmID } = useParams()
 
-  const farm = data.farms.find(farm => farm.id === Number(farmID))
+  const { loading, error, data } = useQuery(GET_FARMERS);
 
-  const grainCards = data.grains.filter(grain => grain.farm_id === Number(farmID))
-    .map(grain => {
+  if (loading) return <p className='loading-message'>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
+  const farm = data.allFarmers.find(farm => farm.id === farmID)
+
+  const grainCards = farm.grains.map(grain => {
       return (
         <Grain key={grain.id} grain={grain} stub={'grain-card-stub'}/>
       )
