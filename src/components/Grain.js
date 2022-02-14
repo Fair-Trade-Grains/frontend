@@ -4,11 +4,26 @@ import { useNavigate } from 'react-router'
 import wheatIcon from '../assets/wheat.svg'
 import statsIcon from '../assets/stats.svg'
 import barnIcon from '../assets/barn.svg'
+import { gql, useMutation } from '@apollo/client';
+
+const DELETE_GRAIN = gql`
+mutation DeleteGrain($input: DeleteGrainInput!){
+  deleteGrain (input: $input) {
+          response
+          }
+      }
+`;
 
 
 const Grain = ({ grain, farm, stub }) => {
 
   const navigate = useNavigate()
+
+  let input;
+  const [deleteGrain, { data, loading, error }] = useMutation(DELETE_GRAIN);
+
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
 
   const navigateToProfile = (event) => {
     event.preventDefault()
@@ -42,7 +57,10 @@ const Grain = ({ grain, farm, stub }) => {
         <button className='view-farm-btn' id={farm.id} onClick={(event) => {navigateToProfile(event)}}>View Details!</button>
         </>
       }
-      {window.location.href.includes('new-grain') && <button>Delete Grain</button>}
+      {window.location.href.includes('new-grain') && <button className='delete-grain-btn' onClick={e => {
+        e.preventDefault();
+        deleteGrain({ variables: { input: { id: grain.id } }});
+      }} type="submit">Delete Grain</button>}
     </div>
   )
 }
