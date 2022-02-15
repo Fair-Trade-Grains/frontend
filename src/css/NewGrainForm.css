@@ -59,3 +59,9 @@
 .numeral {
   width: 50%;
 }
+
+@media screen and (max-width: 800px) {
+  .new-grain-form {
+    width: 90%
+  }
+}

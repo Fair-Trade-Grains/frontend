@@ -4,9 +4,9 @@
   justify-content: space-evenly;
   align-items: center;
 
-  height: 80vh;
+  height: 70vh;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 3vh;
 }
 
 .profile-error {
@@ -100,20 +100,56 @@
   padding-bottom: 5px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   .App-header {
     height: 8vh;
   }
 
+  .farmer-view-header {
+    margin: 1% 5%;
+    margin-top: 10%;
+  }
+
   .farm-profile-container {
-    margin-top: 8%;
+    margin-top: 20%;
   }
 
   .farmer-info-container {
     width: 75%;
   }
 
+  .farmer-grain-container {
+    width: 85%;
+  }
+
   .farmer-view-body {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grain-result {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    height: auto;
+  }
+
+  .grain-name,
+  .grain-stats,
+  .farmer-stats,
+  .view-farm-btn {
+    margin: 5px;
+  }
+
+  .grain-card-stub {
+    width: 90%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .farm-profile-container {
+    margin-top: 30%;
   }
 }

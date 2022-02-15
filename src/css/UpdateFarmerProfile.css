@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
 
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
 }
 
 .nav-btn-container {
@@ -32,4 +32,21 @@
   color: #6f4404;
   transform: scale(1.05);
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .update-farmer-nav-btn {
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav-btn-container {
+    flex-direction: column;
+  }
+
+  .update-farmer-nav-btn {
+    font-size: 4vw;
+    margin: 5px;
+  }
 }
