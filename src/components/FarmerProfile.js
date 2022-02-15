@@ -64,7 +64,7 @@ const FarmerProfile = () => {
           </div>
           <div className="farmer-view-body">
             <div className="farmer-info-container">
-              <img className='profile-pic' src={farm.photoUrl} alt="wheat field ready for harvest under a cloudy blue sky" />
+              <img className='profile-pic' src={farm.photoUrl} alt={farm.name} />
               <article className='farmer-bio'>
                 <p>{farm.bio}</p>
               </article>
