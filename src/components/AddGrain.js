@@ -22,7 +22,7 @@ const AddGrain = ({ grainProfile, clearInputs, closeModal }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (grainProfile.name && grainProfile.protein && grainProfile.testWeight && grainProfile.moisture && grainProfile.fallingNumber) {
-      createGrain({ variables: { input: grainProfile } });
+      createGrain({ variables: { input: { attributes: grainProfile } } });
       setInvalidField(false);
       clearInputs();
       closeModal();
