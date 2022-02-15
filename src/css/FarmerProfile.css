@@ -105,6 +105,10 @@
     height: 8vh;
   }
 
+  .farmer-view-header {
+    margin: 1% 5%;
+  }
+
   .farm-profile-container {
     margin-top: 8%;
   }

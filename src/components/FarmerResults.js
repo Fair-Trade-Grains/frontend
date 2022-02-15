@@ -31,7 +31,7 @@ const FarmerResults = () => {
   const farmCards = data.allFarmers.map(farm => {
     return (
       <div key={farm.id} className="farm-result">
-        <div className='farm-name'>
+        <div className='farm-results-name'>
           <img className='barn-icon' src={barnIcon} />
           <p>{farm.name}</p>
         </div>
@@ -47,7 +47,7 @@ const FarmerResults = () => {
   const filteredCards = filtered.map(farm => {
     return (
       <div key={farm.id} className="farm-result">
-      <div className='farm-name'>
+      <div className='farm-results-name'>
         <img className='barn-icon' src={barnIcon} />
         <p>{farm.name}</p>
       </div>

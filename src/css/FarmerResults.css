@@ -31,7 +31,17 @@
   padding: 3%;
 }
 
-.farm-results-region {
+.farm-results-name {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 3vw;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.farm-results-region,
+.farm-results-name {
   display: flex;
   align-items: center;
 }
@@ -39,7 +49,7 @@
 .view-farm-btn {
   background-color: #6f4404;
   font-family: Raleway, sans-serif;
-  font-size: 20px;
+  font-size: 2vw;
   color: #FFAA00;
   border: 1px solid #FFAA00;
   border-radius: 150px;;
@@ -63,5 +73,27 @@
 @media screen and (min-width: 1000px) {
   .farm-result {
     width: 55%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .farm-results-region {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .farm-result {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 60%;
+  }
+  .farm-results-name {
+    font-size: 4vw;
+  }
+  .farm-results-region,
+  .view-farm-btn {
+    font-size: 3vw;
   }
 }
