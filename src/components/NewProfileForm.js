@@ -17,6 +17,9 @@ class NewProfileForm extends Component {
       region: '',
       bio: '',
       photo_path: '',
+      img_file: '',
+      img_loading: false,
+      img_message: '',
       showModal: false,
       profile: {}
     }
@@ -35,6 +38,30 @@ class NewProfileForm extends Component {
     this.updateCurrentProfile();
   }
 
+  handleFileInput = event => {
+    this.handleChange(event);
+    this.setState({ img_loading: true });
+    const files = event.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'wheatcute');
+    data.append('cloud_name', 'drsgz7uiy');
+    fetch('https://api.cloudinary.com/v1_1/drsgz7uiy/image/upload', {
+      method: "POST",
+      body: data
+    }).then(res => res.json())
+      .then(data => {
+        console.log(data);
+        this.setState({ photo_path: data.secure_url });
+        this.updateCurrentProfile();
+        this.setState({ img_loading: false, img_message: 'Upload successful!' });
+      })
+      .catch(err => {
+        console.log('error with cloudinary API post: ', err);
+        this.setState({ img_loading: false, img_message: 'Error with server, upload failed.' });
+      });
+  }
+
   clearInputs = () => {
     this.setState({
       name: '',
@@ -44,6 +71,9 @@ class NewProfileForm extends Component {
       region: '',
       bio: '',
       photo_path: '',
+      img_file: '',
+      img_loading: false,
+      img_message: '',
       showModal: false,
       profile: {}
     });
@@ -140,12 +170,14 @@ class NewProfileForm extends Component {
           <label htmlFor='photo_path'>Add a photo: </label>
           <input className='new-farm-form-input'
             type='file'
-            id='photo_path'
-            name='photo_path'
-            accept='image/png, image/jpeg'
-            value={this.state.photo_path}
-            onChange={event => this.handleChange(event)}
+            id='img_file'
+            name='img_file'
+            accept='image/*'
+            value={this.state.img_file}
+            onChange={e => this.handleFileInput(e)}
           />
+          {this.state.img_loading && <p className='photo-upload-message'>Your photo is uploading . . .</p>}
+          {this.state.img_message && <p className='photo-upload-message'>{this.state.img_message}</p>}
           <p>Fields marked with an asterisk (<span className='asterisk'>*</span>) are required.</p>
           <AddFarmer profile={this.state.profile} clearInputs={this.clearInputs}/>
         </form>
