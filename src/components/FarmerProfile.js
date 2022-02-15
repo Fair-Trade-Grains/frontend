@@ -56,7 +56,7 @@ const FarmerProfile = () => {
     <div className='farm-profile-container'>
       {window.location.href.includes('farms') && <button onClick={() => { navigate('/grains') }}>Return to List of Grains</button>}
       {!farm ? <p className='profile-error'>{`404: Sorry, no farm with and id of '${farmID}' exists.`}</p> :
-        <section>
+        <section className='profile-container'>
           <div className='farmer-view-header'>
             <h2 className='farm-name'>{farm.name}</h2>
             <p className='farm-region'>Region: {farm.region}</p>
