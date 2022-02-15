@@ -33,7 +33,7 @@
 
 .farm-results-name {
   font-family: 'Londrina Solid', cursive;
-  font-size: 3vw;
+  font-size: 32px;
   padding: 0 15px;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@
 .view-farm-btn {
   background-color: #6f4404;
   font-family: Raleway, sans-serif;
-  font-size: 2vw;
+  font-size: 20px;
   color: #FFAA00;
   border: 1px solid #FFAA00;
   border-radius: 150px;;
@@ -68,6 +68,12 @@
   color: white;
   margin-top: 15px;
   font-size: 36px;
+}
+
+@media screen and (min-width: 1200px) {
+  .farm-results-name {
+    font-size: 32px;
+  }
 }
 
 @media screen and (min-width: 1000px) {
