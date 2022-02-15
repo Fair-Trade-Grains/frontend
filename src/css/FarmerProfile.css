@@ -111,7 +111,7 @@
   }
 
   .farm-profile-container {
-    margin-top: 8%;
+    margin-top: 20%;
   }
 
   .farmer-info-container {
@@ -146,4 +146,10 @@
     width: 90%;
   }
 
+}
+
+@media screen and (max-width: 500px) {
+  .farm-profile-container {
+    margin-top: 30%;
+  }
 }
