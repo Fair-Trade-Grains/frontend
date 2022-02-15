@@ -24,3 +24,9 @@
   font-family: Montserrat;
   color: #6f4404;
 }
+
+@media screen and (max-width: 600px) {
+  .search-bar {
+    font-size: 3vw;
+  }
+}

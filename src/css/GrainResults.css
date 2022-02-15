@@ -16,3 +16,18 @@
   width: 100%;
   padding-bottom: 15px;
 }
+
+.grains-search-error-msg {
+  color: red;
+  font-size: 18px;
+  background-color: #EBE1DB;
+  padding: 1% 2%;
+  border: 1px solid black;
+  border-radius: 5px; 
+}
+
+@media screen and (max-width: 600px) {
+  .grains-search-error-msg {
+    font-size:5vw;
+  }
+}
