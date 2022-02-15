@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/FarmerProfile.css';
 import { useParams, useNavigate } from 'react-router';
 import Grain from './Grain';
-// import wheatField from '../assets/wheatField.png';
 import { useQuery, gql } from '@apollo/client';
 
 export const GET_FARMERS = gql`

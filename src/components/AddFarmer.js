@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../css/NewProfileForm.css';
 import { gql, useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router';
-import { GET_FARMERS } from './FarmerResults'
+import { GET_FARMERS } from './FarmerResults';
 
 const CREATE_FARMER = gql`
 mutation CreateFarmer($input: CreateFarmerInput!){
