@@ -1,7 +1,6 @@
 describe('new farm form', () => {
   beforeEach(() => {
-    // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
-    cy.visit('http://localhost:3000/create-farmer')
+    cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
   })
 
   it('should have the site title and a form with 7 fields', () => {
@@ -18,13 +17,13 @@ describe('new farm form', () => {
   })
 
   it('should have a label and input for the NAME', () => {
-    cy.get('.new-farm-form label').eq(0).contains("Your name or your farm's name: *required*")
+    cy.get('.new-farm-form label').eq(0).contains("Your name or your farm's name:")
     cy.get('.new-farm-form input').eq(0).should('have.attr', 'required')
     cy.get('.new-farm-form input').eq(0).should('have.attr', 'placeholder', 'Smith Family Farm')
   })
 
   it('should have a label and input for the EMAIL', () => {
-    cy.get('.new-farm-form label').eq(1).contains("Your business email: *required*")
+    cy.get('.new-farm-form label').eq(1).contains("Your business email:")
     cy.get('.new-farm-form input').eq(1).should('have.attr', 'required')
     cy.get('.new-farm-form input').eq(1).should('have.attr', 'placeholder', 'example@email.com')
   })
@@ -42,7 +41,7 @@ describe('new farm form', () => {
   })
 
   it('should have a label and select with options for the REGION', () => {
-    cy.get('.new-farm-form label').eq(4).contains("Select your region (see the reference map above this form): *required*")
+    cy.get('.new-farm-form label').eq(4).contains("Select your region (see the reference map above this form):")
     cy.get('.new-farm-form select').should('have.attr', 'required')
     cy.get('.new-farm-form select').find('option').should('have.length', 13)
     cy.get('.new-farm-form option').eq(0).contains('~~ Please choose an option ~~')
@@ -51,7 +50,7 @@ describe('new farm form', () => {
   })
 
   it('should have a label and textarea for the BIO', () => {
-    cy.get('.new-farm-form label').eq(5).contains("Personal and/or farm bio: *required*")
+    cy.get('.new-farm-form label').eq(5).contains("Personal and/or farm bio:")
     cy.get('.new-farm-form textarea').should('have.attr', 'required')
     cy.get('.new-farm-form textarea').should('have.attr', 'placeholder', 'Tell us a little about your organization and your farming practices! (1000 characters or less)')
   })
@@ -59,7 +58,7 @@ describe('new farm form', () => {
   it('should have a label and file input for the PHOTO', () => {
     cy.get('.new-farm-form label').eq(6).contains("Add a photo:")
     cy.get('.new-farm-form input').eq(4).should('not.have.attr', 'required')
-    cy.get('.new-farm-form input').eq(4).should('have.attr', 'accept', 'image/png, image/jpeg')
+    cy.get('.new-farm-form input').eq(4).should('have.attr', 'accept', 'image/*')
   })
 
   it('should have a submit button', () => {
@@ -70,8 +69,7 @@ describe('new farm form', () => {
 
 describe('pop up modal with regions map', () => {
   beforeEach(() => {
-    // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
-    cy.visit('http://localhost:3000/create-farmer')
+    cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
   })
   
   it('should be able to open a pop up modal', () => {
@@ -98,8 +96,7 @@ describe('pop up modal with regions map', () => {
 
 describe('form functionality', () => {
   beforeEach(() => {
-    // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
-    cy.visit('http://localhost:3000/create-farmer')
+    cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
   })
 
   it('should keep NAME input value in state', () => {
@@ -196,8 +193,7 @@ describe('form functionality', () => {
 
 describe('navigation away from the new farm form', () => {
   it('should navigate back to the landing page if the header title is clicked', () => {
-    // cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
-    cy.visit('http://localhost:3000/create-farmer')
+    cy.visit('https://wheat-cute.herokuapp.com/create-farmer')
 
     cy.get('.new-profile-form').should('exist')
     cy.get('.landing-container').should('not.exist')
