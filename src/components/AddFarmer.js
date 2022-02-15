@@ -24,7 +24,7 @@ const AddFarmer = ({ profile, clearInputs }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (profile.name && profile.email && profile.region && profile.bio) {
-      createFarmer({ variables: { input: profile } });
+      createFarmer({ variables: { input: { attributes: profile } } });
       setInvalidField(false);
       clearInputs();
       navigate('/farms');
@@ -32,7 +32,7 @@ const AddFarmer = ({ profile, clearInputs }) => {
       setInvalidField(true);
     }
   }
-  
+
   return (
     <div>
       <button className='profile-submit-btn' onClick={e => { handleSubmit(e) }} type='submit'>Submit</button>
