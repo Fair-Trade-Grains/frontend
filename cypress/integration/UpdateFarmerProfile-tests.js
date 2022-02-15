@@ -7,8 +7,7 @@ describe('the farmer view of their profile page', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/2')
-    cy.visit('http://localhost:3000/new-grain/2')
+    cy.visit('https://wheat-cute.herokuapp.com/new-grain/2')
   })
 
   it('should have a site header with an h1', () => {
@@ -70,8 +69,7 @@ describe('navigation away from the farm update profile view', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/2')
-    cy.visit('http://localhost:3000/new-grain/2')
+    cy.visit('https://wheat-cute.herokuapp.com/new-grain/2')
   })
 
   it('should navigate to back to the landing page if the site title is clicked', () => {
@@ -119,8 +117,7 @@ describe('error message to user in the case of an invalid farmID', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/cat')
-    cy.visit('http://localhost:3000/new-grain/cat')
+    cy.visit('https://wheat-cute.herokuapp.com/new-grain/cat')
 
     cy.get('.App-header h1').contains('Wheatcute')
 
@@ -138,8 +135,7 @@ describe('new grain modal', () => {
       })
     })
     
-    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
-    cy.visit('http://localhost:3000/new-grain/1')
+    cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
   })
   
   it('should be able to open the new-grain form modal', () => {
@@ -157,7 +153,3 @@ describe('new grain modal', () => {
     cy.get('.new-grain-modal').should('not.exist')
   })
 })
-
-// describe('delete a grain', () => {
-//   it('should be able to delete a grain from their profile', () => { })
-// })

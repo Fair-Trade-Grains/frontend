@@ -7,8 +7,7 @@ describe('grain results page', () => {
       })
     }).as('gqlReq')
 
-    // cy.visit('https://wheat-cute.herokuapp.com/grains')
-    cy.visit('http://localhost:3000/grains').wait('@gqlReq')
+    cy.visit('https://wheat-cute.herokuapp.com/grains').wait('@gqlReq')
   })
 
   it('should have a header with an h1', () => {
@@ -90,8 +89,7 @@ describe('filtering results with the search bar', () => {
       })
     }).as('gqlReq')
 
-    // cy.visit('https://wheat-cute.herokuapp.com/grains')
-    cy.visit('http://localhost:3000/grains').wait('@gqlReq')
+    cy.visit('https://wheat-cute.herokuapp.com/grains').wait('@gqlReq')
   })
 
   it('should keep track of its value in state', () => {
@@ -162,8 +160,7 @@ describe('navigation away from the grain results view', () => {
       })
     }).as('gqlReq')
 
-    // cy.visit('https://wheat-cute.herokuapp.com/grains')
-    cy.visit('http://localhost:3000/grains').wait('@gqlReq')
+    cy.visit('https://wheat-cute.herokuapp.com/grains').wait('@gqlReq')
   })
 
   it('should navigate back to the landing page if the header title is clicked', () => {

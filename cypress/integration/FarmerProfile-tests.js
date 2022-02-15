@@ -7,8 +7,7 @@ describe('farmer profile page', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/farms/2')
-    cy.visit('http://localhost:3000/farms/2')
+    cy.visit('https://wheat-cute.herokuapp.com/farms/2')
   })
 
   it('should have a site header with an h1', () => {
@@ -65,8 +64,7 @@ describe('navigation away from the farm profile view', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/farms/2')
-    cy.visit('http://localhost:3000/farms/2')
+    cy.visit('https://wheat-cute.herokuapp.com/farms/2')
   })
 
   it('should navigate to back to the landing page if the site title is clicked', () => {
@@ -114,8 +112,7 @@ describe('error message to user in the case of an invalid farmID', () => {
       })
     })
     
-    // cy.visit('https://wheat-cute.herokuapp.com/farms/cat')
-    cy.visit('http://localhost:3000/farms/cat')
+    cy.visit('https://wheat-cute.herokuapp.com/farms/cat')
 
     cy.get('.App-header h1').contains('Wheatcute')
 

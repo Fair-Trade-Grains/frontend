@@ -1,4 +1,4 @@
-describe('new farm form', () => {
+describe('new grain form', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
       req.reply({
@@ -7,8 +7,7 @@ describe('new farm form', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
-    cy.visit('http://localhost:3000/new-grain/1')
+    cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
     cy.get('.update-farmer-nav-btn').eq(1).click()
   })
 
@@ -72,8 +71,7 @@ describe('form functionality', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
-    cy.visit('http://localhost:3000/new-grain/1')
+    cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
     cy.get('.update-farmer-nav-btn').eq(1).click()
   })
 
@@ -156,7 +154,7 @@ describe('form functionality', () => {
     cy.get('.new-grain-form').contains('Please fill out all required fields.')
   })
 
-  it('should clear inputs and close popup when submit is clicked if required fields have value', () => {
+  it.skip('should clear inputs and close popup when submit is clicked if required fields have value', () => {
     cy.get('.new-grain-form input').eq(0).type('Red Fife Wheat')
     cy.get('.new-grain-form input').eq(1).type('14.5')
     cy.get('.new-grain-form input').eq(2).type('54')
@@ -171,29 +169,28 @@ describe('form functionality', () => {
   })
 })
 
-// describe('navigation away from the new grain form', () => {
-//   it('should remain on the farmer profile view when the popup is closed', () => {
-//     cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
-//       req.reply({
-//         statusCode: 200,
-//         fixture: 'allFarmersProfile.json'
-//       })
-//     })
+describe('navigation away from the new grain form', () => {
+  it('should remain on the farmer profile view when the popup is closed', () => {
+    cy.intercept('POST', 'https://wheat-cute-api.herokuapp.com/graphql', (req) => {
+      req.reply({
+        statusCode: 200,
+        fixture: 'allFarmersProfile.json'
+      })
+    })
 
-//     // cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
-//     cy.visit('http://localhost:3000/new-grain/1')
-//     cy.get('.update-farmer-nav-btn').eq(1).click()
+    cy.visit('https://wheat-cute.herokuapp.com/new-grain/1')
+    cy.get('.update-farmer-nav-btn').eq(1).click()
 
-//     cy.get('.update-farmer-view').should('exist')
-//     cy.get('.new-grain-form').should('exist')
+    cy.get('.update-farmer-view').should('exist')
+    cy.get('.new-grain-form').should('exist')
 
-//     cy.url().should('include', '/new-grain')
+    cy.url().should('include', '/new-grain')
 
-//     cy.get('.new-grain-container button').eq(0).click()
+    cy.get('.close-modal-btn').eq(0).click()
 
-//     cy.get('.update-farmer-view').should('exist')
-//     cy.get('.new-grain-form').should('not.exist')
+    cy.get('.update-farmer-view').should('exist')
+    cy.get('.new-grain-form').should('not.exist')
 
-//     cy.url().should('include', '/new-grain')
-//   })
-// })
+    cy.url().should('include', '/new-grain')
+  })
+})
