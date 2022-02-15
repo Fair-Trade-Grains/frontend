@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/FarmerProfile.css';
 import { useParams, useNavigate } from 'react-router';
 import Grain from './Grain';
-import wheatField from '../assets/wheatField.png';
+// import wheatField from '../assets/wheatField.png';
 import { useQuery, gql } from '@apollo/client';
 
 export const GET_FARMERS = gql`
@@ -64,7 +64,7 @@ const FarmerProfile = () => {
           </div>
           <div className="farmer-view-body">
             <div className="farmer-info-container">
-              <img className='profile-pic' src={wheatField} alt="wheat field ready for harvest under a cloudy blue sky" />
+              <img className='profile-pic' src={farm.photoUrl} alt="wheat field ready for harvest under a cloudy blue sky" />
               <article className='farmer-bio'>
                 <p>{farm.bio}</p>
               </article>
