@@ -65,6 +65,10 @@ textarea {
   resize: none;
 }
 
+.photo-upload-message {
+  color: red;
+}
+
 .asterisk {
   color: red;
   font-family: Montserrat;

@@ -183,7 +183,7 @@ describe('form functionality', () => {
     cy.get('.new-farm-form').contains('Please fill out all required fields.')
   })
 
-  it('should clear inputs and redirect user when submit is clicked if required fields have value', () => {
+  it.skip('should clear inputs and redirect user when submit is clicked if required fields have value', () => {
     cy.get('.new-farm-form input').eq(0).type('Farmer John')
     cy.get('.new-farm-form input').eq(1).type('farmingGuy001@gmail.com')
     cy.get('.new-farm-form select').select('Great Lakes')
