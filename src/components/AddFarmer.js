@@ -38,9 +38,9 @@ const AddFarmer = ({ profile, clearInputs }) => {
   }
 
   return (
-    <div>
+    <div className='form-submit-msg-container'>
       <button className='profile-submit-btn' onClick={e => { handleSubmit(e) }} type='submit'>Submit</button>
-      {invalidField && <p>Please fill out all required fields.</p>}
+      {invalidField && <p className='form-invalid-input-msg'>Please fill out all required fields.</p>}
     </div>
   );
 }
