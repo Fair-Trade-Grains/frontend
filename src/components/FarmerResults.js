@@ -6,7 +6,7 @@ import barnIcon from '../assets/barn.svg';
 import mapIcon from '../assets/map.svg';
 import { useQuery, gql } from '@apollo/client';
 
-const GET_FARMERS = gql`
+export const GET_FARMERS = gql`
   query {
     allFarmers {
       name
