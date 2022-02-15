@@ -7,8 +7,7 @@ describe('farm results view', () => {
       })
     })
 
-    // cy.visit('https://wheat-cute.herokuapp.com/farms/')
-    cy.visit('http://localhost:3000/farms/')
+    cy.visit('https://wheat-cute.herokuapp.com/farms/')
   })
 
   it('should have a site header with an h1', () => {
@@ -55,8 +54,7 @@ describe('filtering results with the search bar', () => {
       })
     }).as('gqlReq')
 
-    // cy.visit('https://wheat-cute.herokuapp.com/farms')
-    cy.visit('http://localhost:3000/farms').wait('@gqlReq')
+    cy.visit('https://wheat-cute.herokuapp.com/farms').wait('@gqlReq')
   })
 
   it('should keep track of its value in state', () => {
@@ -125,8 +123,7 @@ describe('navigation away from the farm results view', () => {
       })
     }).as('gqlReq')
 
-    // cy.visit('https://wheat-cute.herokuapp.com/farms')
-    cy.visit('http://localhost:3000/farms').wait('@gqlReq')
+    cy.visit('https://wheat-cute.herokuapp.com/farms').wait('@gqlReq')
   })
 
   it('should navigate back to the landing page if the header title is clicked', () => {

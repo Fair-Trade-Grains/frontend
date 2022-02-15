@@ -1,7 +1,6 @@
 describe('landing page', () => {
   beforeEach(() => {
-    // cy.visit('https://wheat-cute.herokuapp.com/')
-    cy.visit('http://localhost:3000/')
+    cy.visit('https://wheat-cute.herokuapp.com/')
   })
 
   it('should have a header with an h1', () => {
@@ -33,8 +32,7 @@ describe('landing page', () => {
 
 describe('navigation away from the landing page view', () => {
   beforeEach(() => {
-    // cy.visit('https://wheat-cute.herokuapp.com/')
-    cy.visit('http://localhost:3000/')
+    cy.visit('https://wheat-cute.herokuapp.com/')
   })
 
   it('should navigate to the grain results page if the Connect link is clicked', () => {
