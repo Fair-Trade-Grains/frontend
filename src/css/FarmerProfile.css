@@ -15,8 +15,11 @@
 
 .profile-pic {
   border: 1px solid black;
-  width: 90%;
+  max-width: 90%;
+  height: auto;
   margin: 1%;
+  max-height: 300px;
+  width: auto;
 }
 
 .farmer-view-header {
@@ -29,8 +32,6 @@
   background-color: #EBE1DB;
   margin: 1% 25%;
   padding: 15px;
-
-  /* width: 100%; */
 }
 
 .farm-name {
