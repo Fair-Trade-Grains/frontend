@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../css/NewProfileForm.css';
 import { gql, useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router';
-import { GET_FARMERS } from './FarmerResults'
+import { GET_FARMERS } from './FarmerResults';
 
 const CREATE_FARMER = gql`
 mutation CreateFarmer($input: CreateFarmerInput!){
@@ -38,9 +38,9 @@ const AddFarmer = ({ profile, clearInputs }) => {
   }
 
   return (
-    <div>
+    <div className='form-submit-msg-container'>
       <button className='profile-submit-btn' onClick={e => { handleSubmit(e) }} type='submit'>Submit</button>
-      {invalidField && <p>Please fill out all required fields.</p>}
+      {invalidField && <p className='form-invalid-input-msg'>Please fill out all required fields.</p>}
     </div>
   );
 }

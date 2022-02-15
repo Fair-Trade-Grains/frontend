@@ -65,7 +65,7 @@ const GrainResults = () => {
     <div className='grain-browse-view'>
       <Search handleChange={handleChange} />
       <section className='grains-container'>
-        {(search && !filteredCards.length) && <p>No grains match the current search. Please start over!</p>}
+        {(search && !filteredCards.length) && <p className='grains-search-error-msg'>No grains match the current search. Please start over!</p>}
         {search ? filteredCards : grainCards}
       </section>
     </div>

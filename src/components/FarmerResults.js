@@ -75,7 +75,7 @@ const FarmerResults = () => {
     <div className='farm-browse-view'>
       <Search handleChange={handleChange} />
       <section className='farms-container'>
-        {(search && !filteredCards.length) && <p>No farms match the current search. Please start over!</p>}
+        {(search && !filteredCards.length) && <p className='farms-search-error-msg'>No farms match the current search. Please start over!</p>}
         {search ? filteredCards : farmCards}
       </section>
     </div>

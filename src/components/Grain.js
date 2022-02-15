@@ -5,6 +5,7 @@ import wheatIcon from '../assets/wheat.svg';
 import statsIcon from '../assets/stats.svg';
 import barnIcon from '../assets/barn.svg';
 import { gql, useMutation } from '@apollo/client';
+import { GET_FARMERS } from './FarmerProfile';
 
 const DELETE_GRAIN = gql`
 mutation DeleteGrain($input: DeleteGrainInput!){
@@ -18,7 +19,11 @@ const Grain = ({ grain, farm, stub }) => {
 
   const navigate = useNavigate();
 
-  const [deleteGrain, { data, loading, error }] = useMutation(DELETE_GRAIN);
+  const [deleteGrain, { data, loading, error }] = useMutation(DELETE_GRAIN, {
+    refetchQueries: [
+      GET_FARMERS
+    ]
+  });
 
   if (loading) return 'Submitting...';
   if (error) return `Submission error! ${error.message}`;

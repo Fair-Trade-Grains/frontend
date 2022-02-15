@@ -70,6 +70,15 @@
   font-size: 36px;
 }
 
+.farms-search-error-msg {
+  color: red;
+  font-size: 18px;
+  background-color: #EBE1DB;
+  padding: 1% 2%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 1200px) {
   .farm-results-name {
     font-size: 32px;
@@ -95,7 +104,8 @@
     justify-items: center;
     width: 60%;
   }
-  .farm-results-name {
+  .farm-results-name,
+  .farms-search-error-msg {
     font-size: 5vw;
   }
   .farm-results-region,

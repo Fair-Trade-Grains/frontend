@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/FarmerProfile.css';
 import { useParams, useNavigate } from 'react-router';
 import Grain from './Grain';
-import wheatField from '../assets/wheatField.png';
 import { useQuery, gql } from '@apollo/client';
 
 export const GET_FARMERS = gql`
@@ -57,14 +56,14 @@ const FarmerProfile = () => {
     <div className='farm-profile-container'>
       {window.location.href.includes('farms') && <button onClick={() => { navigate('/grains') }}>Return to List of Grains</button>}
       {!farm ? <p className='profile-error'>{`404: Sorry, no farm with and id of '${farmID}' exists.`}</p> :
-        <section>
+        <section className='profile-container'>
           <div className='farmer-view-header'>
             <h2 className='farm-name'>{farm.name}</h2>
             <p className='farm-region'>Region: {farm.region}</p>
           </div>
           <div className="farmer-view-body">
             <div className="farmer-info-container">
-              <img className='profile-pic' src={wheatField} alt="wheat field ready for harvest under a cloudy blue sky" />
+              <img className='profile-pic' src={farm.photoUrl} alt={farm.name} />
               <article className='farmer-bio'>
                 <p>{farm.bio}</p>
               </article>

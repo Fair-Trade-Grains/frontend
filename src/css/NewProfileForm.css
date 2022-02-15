@@ -75,6 +75,16 @@ textarea {
   font-weight: bolder;
 }
 
+.form-submit-msg-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-invalid-input-msg {
+  color: red;
+  padding: 5px 0;
+}
+
 @media screen and (max-width: 1000px) {
   .new-farm-form {
     width: 80%;
