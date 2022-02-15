@@ -5,7 +5,7 @@ import Grain from './Grain';
 import wheatField from '../assets/wheatField.png';
 import { useQuery, gql } from '@apollo/client';
 
-const GET_FARMERS = gql`
+export const GET_FARMERS = gql`
   query {
     allFarmers {
       name

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../css/NewGrainForm.css';
 import { gql, useMutation } from '@apollo/client';
+import { GET_FARMERS } from './FarmerProfile';
 
 const CREATE_GRAIN = gql`
 mutation CreateGrain($input: CreateGrainInput!){
@@ -13,7 +14,11 @@ mutation CreateGrain($input: CreateGrainInput!){
 
 const AddGrain = ({ grainProfile, clearInputs, closeModal }) => {
 
-  const [createGrain, { data, loading, error }] = useMutation(CREATE_GRAIN);
+  const [createGrain, { data, loading, error }] = useMutation(CREATE_GRAIN, {
+    refetchQueries: [
+      GET_FARMERS
+    ]
+  });
   const [invalidField, setInvalidField] = useState(false);
 
   if (loading) return 'Submitting...';
