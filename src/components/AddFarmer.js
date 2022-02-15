@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/NewProfileForm.css';
 import { gql, useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router';
+import { GET_FARMERS } from './FarmerResults'
 
 const CREATE_FARMER = gql`
 mutation CreateFarmer($input: CreateFarmerInput!){
@@ -15,7 +16,10 @@ mutation CreateFarmer($input: CreateFarmerInput!){
 const AddFarmer = ({ profile, clearInputs }) => {
 
   const navigate = useNavigate()
-  const [createFarmer, { data, loading, error }] = useMutation(CREATE_FARMER);
+  const [createFarmer, { data, loading, error }] = useMutation(CREATE_FARMER, {
+  refetchQueries: [
+    GET_FARMERS
+  ]});
   const [invalidField, setInvalidField] = useState(false);
 
   if (loading) return 'Submitting...';
