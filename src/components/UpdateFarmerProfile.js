@@ -32,7 +32,7 @@ const UpdateFarmerProfile = () => {
       </section>
       <ReactModal isOpen={showModal} className='new-grain-modal'>
         <button onClick={() => { handleCloseModal() }} className="close-modal-btn">Close</button>
-        <NewGrainForm farmId={farmID}/>
+        <NewGrainForm farmId={farmID} closeModal={handleCloseModal}/>
       </ReactModal>
     </div>
   );

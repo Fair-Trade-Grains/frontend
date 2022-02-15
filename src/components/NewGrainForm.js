@@ -131,7 +131,7 @@ class NewGrainForm extends Component {
             onChange={event => this.handleChange(event)}
           />
           <p>Fields marked with an asterisk (<span className='asterisk'>*</span>) are required.</p>
-          <AddGrain grainProfile={this.state.grainProfile} clearInputs={this.clearInputs} closeModal={ this.props.closeModal}/>
+          <AddGrain grainProfile={this.state.grainProfile} clearInputs={this.clearInputs} closeModal={this.props.closeModal}/>
         </form>
       </div>
     );
