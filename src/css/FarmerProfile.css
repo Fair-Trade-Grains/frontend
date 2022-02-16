@@ -108,6 +108,17 @@
   padding-bottom: 5px;
 }
 
+.email-btn {
+  margin-top: 4%;
+}
+
+.email-modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 @media screen and (max-width: 800px) {
   .App-header {
     height: 8vh;
