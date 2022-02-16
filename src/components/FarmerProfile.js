@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/FarmerProfile.css';
 import { useParams, useNavigate } from 'react-router';
 import Grain from './Grain';
 import { useQuery, gql } from '@apollo/client';
+import ReactModal from 'react-modal';
+import NewEmailForm from './NewEmailForm';
 
 export const GET_FARMERS = gql`
   query {
@@ -29,10 +31,13 @@ export const GET_FARMERS = gql`
   }
 `;
 
+ReactModal.setAppElement('#root');
+
 const FarmerProfile = () => {
 
   const navigate = useNavigate();
   const { farmID } = useParams();
+  const [isOpen, setIsOpen] = useState(false)
 
   const { loading, error, data } = useQuery(GET_FARMERS);
 
@@ -50,6 +55,14 @@ const FarmerProfile = () => {
         <Grain key={grain.id} grain={grain} stub={'grain-card-stub'} />
       );
     });
+  }
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  }
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
   }
 
   return (
@@ -72,6 +85,7 @@ const FarmerProfile = () => {
                 <p>{farm.email}</p>
                 <p>{farm.phone}</p>
                 <p>{farm.address}</p>
+                {window.location.href.includes('farms') && <button className='email-btn' onClick={() => { handleOpenModal() }}>Send an Email Now</button>}
               </article>
             </div>
             <div className='farmer-grain-container'>
@@ -79,6 +93,10 @@ const FarmerProfile = () => {
               {grainCards ? grainCards : <p>Loading . . .</p>}
             </div>
           </div>
+          <ReactModal isOpen={isOpen} className='email-modal-container'>
+            <button onClick={() => { handleCloseModal() }} className='close-modal-btn'>Close</button>
+            <NewEmailForm farmEmail={farm.email}/>
+          </ReactModal>
         </section>
       }
     </div>
