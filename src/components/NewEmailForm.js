@@ -10,26 +10,6 @@ mutation ContactFarmer($input: ContactFarmerInput!){
   }
 `;
 
-// FROM JSON CONTRACT:
-// mutation {
-//   contactFarmer(input: {
-//     farmer: "example@test.com",
-//     sender: "example@test.com",
-//     message: "Do you have any barley right now?"
-//   })
-//   { response }
-// }
-// FROM ADDGRAIN.JS:
-// const CREATE_GRAIN = gql`
-// mutation CreateGrain($input: CreateGrainInput!){
-//   createGrain (input: $input) {
-//       name
-//       farmersNotes
-//     }
-//   }
-// `;
-// createGrain({ variables: { input: { attributes: grainProfile } } });
-
 const NewEmailForm = ({ farmEmail }) => {
 
   const [senderEmail, setSenderEmail] = useState('');
@@ -37,7 +17,7 @@ const NewEmailForm = ({ farmEmail }) => {
   const [invalidField, setInvalidField] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
-  const [createEmail, { data, loading, error }] = useMutation(CREATE_EMAIL);
+  const [contactFarmer, { data, loading, error }] = useMutation(CREATE_EMAIL);
 
   if (loading) return 'Submitting...';
   if (error) return `Submission error! ${error.message}`;
@@ -51,11 +31,9 @@ const NewEmailForm = ({ farmEmail }) => {
         sender: senderEmail,
         message: emailBody
       }
-      createEmail({ variables: { input: { attributes: newEmail } } });
-      // createEmail({ variables: { input: newEmail } });
-      console.log(data.contactFarmer.response)
-      setSuccessMessage(`${data.contactFarmer.response}! Congrats on connecting!`)
-      setTimeout(() => { clearInputs() }, 1500);
+      contactFarmer({ variables: { input: newEmail } });
+      setSuccessMessage('Congrats, your message sent! 🌾 The seeds have been sown!');
+      clearInputs();
     } else {
       setInvalidField(true);
     }
@@ -65,7 +43,7 @@ const NewEmailForm = ({ farmEmail }) => {
     setSenderEmail('');
     setEmailBody('');
     setInvalidField(false);
-    setSuccessMessage('');
+    setTimeout(() => { setSuccessMessage('') }, 3000);
   }
 
   return (
@@ -85,7 +63,7 @@ const NewEmailForm = ({ farmEmail }) => {
         <label htmlFor='email'>What would you like to say?</label>
         <textarea className='new-email-input'
           id='email'
-          placeholder='Perhaps you can introduce yourself, explain why you are interested in them, and tell them which grain(s) you would like to discuss...'
+          placeholder='Introduce yourself and get those grains!'
           name='email'
           rows='6'
           value={emailBody}
