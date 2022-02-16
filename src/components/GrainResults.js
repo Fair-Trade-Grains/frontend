@@ -3,6 +3,8 @@ import '../css/GrainResults.css';
 import Search from './Search';
 import Grain from './Grain';
 import { useQuery, gql } from '@apollo/client';
+import ReactModal from 'react-modal';
+import usdaRegionMap from '../assets/usdaRegionMap.png';
 
 const GET_FARMERS = gql`
   query {
@@ -24,10 +26,13 @@ const GET_FARMERS = gql`
   }
 `;
 
+ReactModal.setAppElement('#root');
+
 const GrainResults = () => {
 
   const [search, setSearch] = useState('');
   const [filtered, setFiltered] = useState([]);
+  const [isOpen, setIsOpen] = useState(false)
 
   const { loading, error, data } = useQuery(GET_FARMERS);
 
@@ -48,6 +53,14 @@ const GrainResults = () => {
     );
   });
 
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  }
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  }
+
   const handleChange = (searchText) => {
     const filteredList = data.allFarmers.reduce((filteredList, farm) => {
       farm.grains.map(grain => {
@@ -63,11 +76,16 @@ const GrainResults = () => {
 
   return (
     <div className='grain-browse-view'>
+      <button className='grains-map-modal-btn' onClick={() => {handleOpenModal()}}>See map of the regions!</button>
       <Search handleChange={handleChange} />
       <section className='grains-container'>
         {(search && !filteredCards.length) && <p className='grains-search-error-msg'>No grains match the current search. Please start over!</p>}
         {search ? filteredCards : grainCards}
       </section>
+      <ReactModal isOpen={isOpen} className='map-modal-container'>
+        <button onClick={() => {handleCloseModal()}} className='close-modal-btn'>Close</button>
+        <img className='usda-region-map' src={usdaRegionMap} alt='USDA Agriculture Regions Map' />
+      </ReactModal>
     </div>
   );
 }
