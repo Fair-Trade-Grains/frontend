@@ -66,7 +66,7 @@ WheatCute is a React application that aims to connect grain producers with indus
 ![HTML][HTML5-img]
 
 #### Deployment
-[![Circle CI](https://circleci.com/gh/Fair-Trade-Grains/frontend/tree/beta.svg?style=svg)](https://circleci.com/gh/Fair-Trade-Grains/frontend/tree/beta)
+[![Circle CI](https://circleci.com/gh/Fair-Trade-Grains/frontend/tree/main.svg?style=svg)](https://circleci.com/gh/Fair-Trade-Grains/frontend/tree/main)
 
 ![CircleCi][Circle Ci-img]
 ![Heroku][Heroku-img]
