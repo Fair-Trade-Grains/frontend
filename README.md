@@ -23,6 +23,8 @@
 
 <img width="600" alt="email-form" src="https://user-images.githubusercontent.com/80644408/154538814-e11ebecb-1f14-4569-abe5-5e736ee0b39a.png">
 
+<img width="200" alt="mobile-landing" src="https://user-images.githubusercontent.com/80644408/154552672-ec859001-b68b-40aa-9323-f59c85c0a672.png"><img width="200" alt="mobile-grains" src="https://user-images.githubusercontent.com/80644408/154552692-bd766b14-1258-486b-bfd6-a8f12c346d9e.png"><img width="200" alt="mobile-profile" src="https://user-images.githubusercontent.com/80644408/154552698-a86645e1-07df-40e8-bac1-a0792ea42457.png">
+
 ## Table of Contents
 - [Overview](#overview)
 - [Project Management](#project-management)
