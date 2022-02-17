@@ -1,0 +1,113 @@
+.farm-browse-view {
+  display: flex;
+  flex-direction: column;
+  /* height: 80vh; */
+  width: 100%;
+}
+
+.farms-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* height: auto; */
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.farm-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #EBE1DB;
+  width: 70%;
+  padding: 3%;
+}
+
+.farm-results-name {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 32px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.farm-results-region,
+.farm-results-name {
+  display: flex;
+  align-items: center;
+}
+
+.view-farm-btn {
+  background-color: #6f4404;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  color: #FFAA00;
+  border: 1px solid #FFAA00;
+  border-radius: 150px;;
+  padding: 3px 10px;
+}
+
+.view-farm-btn:hover {
+  background-color: #FFAA00;
+  color: #6f4404;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.loading-message {
+  text-align: center;
+  color: white;
+  margin-top: 15px;
+  font-size: 36px;
+}
+
+.farms-search-error-msg {
+  color: red;
+  font-size: 18px;
+  background-color: #EBE1DB;
+  padding: 1% 2%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+  .farm-results-name {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .farm-result {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .farm-results-region {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .farm-result {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 60%;
+  }
+  .farm-results-name,
+  .farms-search-error-msg {
+    font-size: 5vw;
+  }
+  .farm-results-region,
+  .view-farm-btn {
+    font-size: 4vw;
+  }
+}

@@ -1,0 +1,109 @@
+.new-profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 80vh; */
+  width: 100%;
+}
+
+.new-farm-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #EBE1DB;
+  font-size: 18px;
+  height: 90%;
+  width: 50%;
+  margin: 2%;
+  padding: 1%;
+}
+
+.new-farm-form-input {
+  width: 70%;
+  font-size: 18px;
+  padding: 2px;
+  margin: 2% 0;
+}
+
+.profile-submit-btn {
+  background-color: #6f4404;
+  font-family: Raleway, sans-serif;
+  font-size: 20px;
+  color: #da9100;
+  border: 1px solid #da9100;
+  border-radius: 150px;;
+  padding: 3px 10px;
+  margin-top: 3%;
+}
+
+.profile-submit-btn:hover {
+  background-color: #da9100;
+  color: #6f4404;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.map-modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.usda-region-map {
+  height: 500px;
+  width: 750px;
+  margin-top: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+.photo-upload-message {
+  color: red;
+}
+
+.asterisk {
+  color: red;
+  font-family: Montserrat;
+  font-weight: bolder;
+}
+
+.form-submit-msg-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-invalid-input-msg {
+  color: red;
+  padding: 5px 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .new-farm-form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .usda-region-map {
+    height: 400px;
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .new-farm-form {
+    padding: 10px;
+  }
+
+  .usda-region-map {
+    height: 300px;
+    width: 450px;
+  }
+}

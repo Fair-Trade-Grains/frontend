@@ -1,0 +1,50 @@
+{
+  "data": {
+    "allFarmers": [
+      {
+        "name": "Clark Kent",
+        "id": "1",
+        "region": "South",
+        "grains": [
+          {
+            "name": "Amaranth",
+            "id": "1",
+            "moisture": 12.0,
+            "fallingNumber": 236.0,
+            "protein": 13.0,
+            "testWeight": 55.0,
+            "farmersNotes": "N/A",
+            "farmerId": 1
+          },
+          {
+            "name": "Rye",
+            "id": "2",
+            "moisture": 8.0,
+            "fallingNumber": 200.0,
+            "protein": 14.0,
+            "testWeight": 60.0,
+            "farmersNotes": "N/A",
+            "farmerId": 1
+          }
+        ]
+      },
+      {
+        "name": "Owen Lars",
+        "id": "2",
+        "region": "Mountain",
+        "grains": [
+          {
+            "name": "Wheat-Spelt",
+            "id": "3",
+            "moisture": 14.0,
+            "fallingNumber": 175.0,
+            "protein": 10.0,
+            "testWeight": 54.0,
+            "farmersNotes": "N/A",
+            "farmerId": 2
+          }
+        ]
+      }
+    ]
+  }
+}

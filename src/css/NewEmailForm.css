@@ -1,0 +1,28 @@
+.new-email-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60vh;
+  width: 100%;
+}
+
+.new-email-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #EBE1DB;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 80%;
+  width: 50%;
+  margin: 2%;
+}
+
+.new-email-input {
+  width: 75%;
+  margin: 5px;
+  font-size: 16px;
+}
