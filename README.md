@@ -4,9 +4,9 @@
   </a>
 </h1>
 <div align="center">
-  <a href="https://wheat-cute.herokuapp.com/"><strong>Wheat Cute App »</strong></a>
+  <a href="https://wheat-cute.herokuapp.com/"><strong>WheatCute App »</strong></a>
   <br />
-  <a href="https://github.com/Fair-Trade-Grains/wheat-cute-be"><strong>Wheat Cute Back-End Repo »</strong></a>
+  <a href="https://github.com/Fair-Trade-Grains/wheat-cute-be"><strong>WheatCute Back-End Repo »</strong></a>
   <br />
 </div>
 
@@ -19,7 +19,7 @@
 
 ### <ins>Overview</ins>
 
-Wheat Cute is a React application that aims to connect grain producers with industrial grain consumers in the baking and brewing industry. Farmers can leave their contact data and list grains they have to offer, and prospective buyers can search for the perfect grain for their next beer or bread and reach out directly to the farmer!
+WheatCute is a React application that aims to connect grain producers with industrial grain consumers in the baking and brewing industry. Farmers can leave their contact data and list grains they have to offer, and prospective buyers can search for the perfect grain for their next beer or bread and reach out directly to the farmer!
 
 ### <ins>Project Management</ins>
 - [Ideation](https://miro.com/app/board/uXjVOQKpgUY=/?invite_link_id=173812514517)
@@ -53,6 +53,8 @@ Wheat Cute is a React application that aims to connect grain producers with indu
 ![HTML][HTML5-img]
 
 #### Deployment
+[![Circle CI](https://circleci.com/gh/Fair-Trade-Grains/frontend/tree/beta.svg?style=svg)](https://circleci.com/gh/Fair-Trade-Grains/frontend/tree/beta)
+
 ![CircleCi][Circle Ci-img]
 ![Heroku][Heroku-img]
 
