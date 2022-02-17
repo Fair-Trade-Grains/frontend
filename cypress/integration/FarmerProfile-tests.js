@@ -94,7 +94,7 @@ describe('navigation away from the farm profile view', () => {
       })
     })
 
-    cy.get('.farm-profile-container button').click()
+    cy.get('.farm-profile-container button').eq(0).click()
 
     cy.get('.farm-profile-container').should('not.exist')
     cy.get('.grain-browse-view').should('exist')
