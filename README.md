@@ -36,14 +36,15 @@ Wheat Cute is a React application that aims to connect grain producers with indu
 
 #### Development
 ![React][React-img]
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![GraphQL][GraphQL-img]
+![Apollo Client][ApolloClient-img]
 ![Atom][Atom-img]
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Git][Git-img]
 ![Github][GitHub-img]
-![GraphQL][GraphQL-img]
 ![Markdown][Markdown-img]
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![Postman][Postman-img]
 
 #### Languages
@@ -86,6 +87,7 @@ Wheat Cute is a React application that aims to connect grain producers with indu
 [Git-img]: https://img.shields.io/badge/Git-F05032.svg?&style=flaste&logo=git&logoColor=white
 [GitHub-img]: https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github
 [GraphQL-img]: https://img.shields.io/badge/-GraphQL-E10098?style=flat&logo=graphql&logoColor=light-pink
+[ApolloClient-img]: https://img.shields.io/static/v1?label=&logo=apollographql&message=ApolloClient&color=311C87
 [Markdown-img]: https://img.shields.io/badge/Markdown-000000.svg??style=for-the-badge&logo=markdown&logoColor=white
 [PostgreSQL-img]: https://img.shields.io/badge/PostgreSQL-4169E1.svg?&style=flaste&logo=postgresql&logoColor=white
 [Postman-img]: https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=red
